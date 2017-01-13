@@ -1,0 +1,390 @@
+	[
+      {
+         "id":"Equal",
+         "caption":"is equal to",
+         "displayFormat":"{expr1} [[is equal to]] {expr2}",
+         "paramCount":2,
+         "valueKind":"Scalar",
+         "exprType":"Unknown"
+      },
+      {
+         "id":"NotEqual",
+         "caption":"is not equal to",
+         "displayFormat":"{expr1} [[is not equal to]] {expr2}",
+         "paramCount":2,
+         "valueKind":"Scalar",
+         "exprType":"Unknown"
+      },
+      {
+         "id":"LessThan",
+         "caption":"is less than",
+         "displayFormat":"{expr1} [[is less than]] {expr2}",
+         "paramCount":2,
+         "valueKind":"Scalar",
+         "exprType":"Unknown"
+      },
+      {
+         "id":"LessOrEqual",
+         "caption":"is less than or equal to",
+         "displayFormat":"{expr1} [[is less than or equal to]] {expr2}",
+         "paramCount":2,
+         "valueKind":"Scalar",
+         "exprType":"Unknown"
+      },
+      {
+         "id":"GreaterThan",
+         "caption":"is greater than",
+         "displayFormat":"{expr1} [[is greater than]] {expr2}",
+         "paramCount":2,
+         "valueKind":"Scalar",
+         "exprType":"Unknown"
+      },
+      {
+         "id":"GreaterOrEqual",
+         "caption":"is greater than or equal to",
+         "displayFormat":"{expr1} [[is greater than or equal to]] {expr2}",
+         "paramCount":2,
+         "valueKind":"Scalar",
+         "exprType":"Unknown"
+      },
+      {
+         "id":"IsNull",
+         "caption":"is null",
+         "displayFormat":"{expr1} [[is null]] ",
+         "paramCount":1,
+         "valueKind":"Scalar",
+         "exprType":"Unknown"
+      },
+      {
+         "id":"NotNull",
+         "caption":"is not null",
+         "displayFormat":"{expr1} [[is not null]] ",
+         "paramCount":1,
+         "valueKind":"Scalar",
+         "exprType":"Unknown"
+      },
+      {
+         "id":"InList",
+         "caption":"is in list",
+         "displayFormat":"{expr1} [[is in list]] {expr2}",
+         "paramCount":2,
+         "valueKind":"List",
+         "exprType":"Unknown"
+      },
+      {
+         "id":"NotInList",
+         "caption":"is not in list",
+         "displayFormat":"{expr1} [[is not in list]] {expr2}",
+         "paramCount":2,
+         "valueKind":"List",
+         "exprType":"Unknown"
+      },
+      {
+         "id":"StartsWith",
+         "caption":"starts with",
+         "displayFormat":"{expr1} [[starts with]] {expr2}",
+         "paramCount":2,
+         "valueKind":"Scalar",
+         "exprType":"Unknown",
+         "defaultEditor":{
+            "defvalue":"",
+            "id":"",
+            "restype":"String",
+            "type":"EDIT"
+         }
+      },
+      {
+         "id":"NotStartsWith",
+         "caption":"does not start with",
+         "displayFormat":"{expr1} [[does not start with]] {expr2}",
+         "paramCount":2,
+         "valueKind":"Scalar",
+         "exprType":"Unknown",
+         "defaultEditor":{
+            "defvalue":"",
+            "id":"",
+            "restype":"String",
+            "type":"EDIT"
+         }
+      },
+      {
+         "id":"Contains",
+         "caption":"contains",
+         "displayFormat":"{expr1} [[contains]] {expr2}",
+         "paramCount":2,
+         "valueKind":"Scalar",
+         "exprType":"Unknown",
+         "defaultEditor":{
+            "defvalue":"",
+            "id":"",
+            "restype":"String",
+            "type":"EDIT"
+         }
+      },
+      {
+         "id":"NotContains",
+         "caption":"does not contain",
+         "displayFormat":"{expr1} [[does not contain]] {expr2}",
+         "paramCount":2,
+         "valueKind":"Scalar",
+         "exprType":"Unknown",
+         "defaultEditor":{
+            "defvalue":"",
+            "id":"",
+            "restype":"String",
+            "type":"EDIT"
+         }
+      },
+      {
+         "id":"Between",
+         "caption":"is between",
+         "displayFormat":"{expr1} [[is between]] {expr2} and {expr3}",
+         "paramCount":3,
+         "valueKind":"Scalar",
+         "exprType":"Unknown"
+      },
+      {
+         "id":"NotBetween",
+         "caption":"is not between",
+         "displayFormat":"{expr1} [[is not between]] {expr2} and {expr3}",
+         "paramCount":3,
+         "valueKind":"Scalar",
+         "exprType":"Unknown"
+      },
+      {
+         "id":"InSubQuery",
+         "caption":"in sub query",
+         "displayFormat":"{expr1} [[in sub query]] {expr2}",
+         "paramCount":2,
+         "valueKind":"Query",
+         "exprType":"Byte"
+      },
+      {
+         "id":"DateEqualSpecial",
+         "caption":"is (special date)",
+         "displayFormat":"{expr1} [[is]] {expr2}",
+         "paramCount":2,
+         "valueKind":"Scalar",
+         "exprType":"Unknown",
+         "defaultEditor":{
+            "id":"",
+            "name":"SpecDateValues",
+            "restype":"Unknown",
+            "type":"CUSTOMLIST"
+         }
+      },
+      {
+         "id":"DateEqualPrecise",
+         "caption":"is (precise date)",
+         "displayFormat":"{expr1} [[is]] {expr2}",
+         "paramCount":2,
+         "valueKind":"Scalar",
+         "exprType":"Unknown",
+         "defaultEditor":{
+            "id":"",
+            "restype":"Unknown",
+            "type":"DATETIME"
+         }
+      },
+      {
+         "id":"DateNotEqualSpecial",
+         "caption":"is not (special date)",
+         "displayFormat":"{expr1} [[is not]] {expr2}",
+         "paramCount":2,
+         "valueKind":"Scalar",
+         "exprType":"Unknown",
+         "defaultEditor":{
+            "id":"",
+            "name":"SpecDateValues",
+            "restype":"Unknown",
+            "type":"CUSTOMLIST"
+         }
+      },
+      {
+         "id":"DateNotEqualPrecise",
+         "caption":"is not (precise date)",
+         "displayFormat":"{expr1} [[is not]] {expr2}",
+         "paramCount":2,
+         "valueKind":"Scalar",
+         "exprType":"Unknown",
+         "defaultEditor":{
+            "id":"",
+            "restype":"Unknown",
+            "type":"DATETIME"
+         }
+      },
+      {
+         "id":"DateBeforeSpecial",
+         "caption":"is before (special date)",
+         "displayFormat":"{expr1} [[is before]] {expr2}",
+         "paramCount":2,
+         "valueKind":"Scalar",
+         "exprType":"Unknown",
+         "defaultEditor":{
+            "id":"",
+            "name":"SpecDateValues",
+            "restype":"Unknown",
+            "type":"CUSTOMLIST"
+         }
+      },
+      {
+         "id":"DateBeforePrecise",
+         "caption":"is before (precise date)",
+         "displayFormat":"{expr1} [[is before]] {expr2}",
+         "paramCount":2,
+         "valueKind":"Scalar",
+         "exprType":"Unknown",
+         "defaultEditor":{
+            "id":"",
+            "restype":"Unknown",
+            "type":"DATETIME"
+         }
+      },
+      {
+         "id":"DateAfterSpecial",
+         "caption":"is after (special date)",
+         "displayFormat":"{expr1} [[is after]] {expr2}",
+         "paramCount":2,
+         "valueKind":"Scalar",
+         "exprType":"Unknown",
+         "defaultEditor":{
+            "id":"",
+            "name":"SpecDateValues",
+            "restype":"Unknown",
+            "type":"CUSTOMLIST"
+         }
+      },
+      {
+         "id":"DateAfterPrecise",
+         "caption":"is after (precise date)",
+         "displayFormat":"{expr1} [[is after]] {expr2}",
+         "paramCount":2,
+         "valueKind":"Scalar",
+         "exprType":"Unknown",
+         "defaultEditor":{
+            "id":"",
+            "restype":"Unknown",
+            "type":"DATETIME"
+         }
+      },
+      {
+         "id":"DatePeriodPrecise",
+         "caption":"is between",
+         "displayFormat":"{expr1} [[is between]] {expr2} and {expr3}",
+         "paramCount":3,
+         "valueKind":"Scalar",
+         "exprType":"Unknown",
+         "defaultEditor":{
+            "id":"",
+            "restype":"Unknown",
+            "type":"DATETIME"
+         }
+      },
+      {
+         "id":"TimeBeforeSpecial",
+         "caption":"is before (special time)",
+         "displayFormat":"{expr1} [[is before]] {expr2}",
+         "paramCount":2,
+         "valueKind":"Scalar",
+         "exprType":"Unknown",
+         "defaultEditor":{
+            "id":"",
+            "name":"SpecTimeValues",
+            "restype":"Unknown",
+            "type":"CUSTOMLIST"
+         }
+      },
+      {
+         "id":"TimeBeforePrecise",
+         "caption":"is before (precise time)",
+         "displayFormat":"{expr1} [[is before]] {expr2}",
+         "paramCount":2,
+         "valueKind":"Scalar",
+         "exprType":"Unknown",
+         "defaultEditor":{
+            "id":"",
+            "restype":"Unknown",
+            "type":"DATETIME"
+         }
+      },
+      {
+         "id":"TimeAfterSpecial",
+         "caption":"is after (special time)",
+         "displayFormat":"{expr1} [[is after]] {expr2}",
+         "paramCount":2,
+         "valueKind":"Scalar",
+         "exprType":"Unknown",
+         "defaultEditor":{
+            "id":"",
+            "name":"SpecTimeValues",
+            "restype":"Unknown",
+            "type":"CUSTOMLIST"
+         }
+      },
+      {
+         "id":"TimeAfterPrecise",
+         "caption":"is after (precise time)",
+         "displayFormat":"{expr1} [[is after]] {expr2}",
+         "paramCount":2,
+         "valueKind":"Scalar",
+         "exprType":"Unknown",
+         "defaultEditor":{
+            "id":"",
+            "restype":"Unknown",
+            "type":"DATETIME"
+         }
+      },
+      {
+         "id":"TimePeriodPrecise",
+         "caption":"is between",
+         "displayFormat":"{expr1} [[is between]] {expr2} and {expr3}",
+         "paramCount":3,
+         "valueKind":"Scalar",
+         "exprType":"Unknown",
+         "defaultEditor":{
+            "id":"",
+            "restype":"Unknown",
+            "type":"DATETIME"
+         }
+      },
+      {
+         "id":"MaximumOfAttr",
+         "caption":"is maximum of",
+         "displayFormat":"{expr1} [[is equal to maximum of]] {expr2}",
+         "paramCount":2,
+         "valueKind":"Attribute",
+         "exprType":"Unknown"
+      },
+      {
+         "id":"GreaterThanAvg",
+         "caption":"greater than average",
+         "displayFormat":"{expr1} [[is greater than average of]] {expr2}",
+         "paramCount":2,
+         "valueKind":"Attribute",
+         "exprType":"Unknown"
+      },
+      {
+         "id":"IsNotNull",
+         "caption":"is not null",
+         "displayFormat":"{expr1} [[is not null]] ",
+         "paramCount":1,
+         "valueKind":"Scalar",
+         "exprType":"Unknown"
+      },
+      {
+         "id":"IsTrue",
+         "caption":"is true",
+         "displayFormat":"{expr1} [[is true]]",
+         "paramCount":1,
+         "valueKind":"Scalar",
+         "exprType":"Unknown"
+      },
+      {
+         "id":"NotTrue",
+         "caption":"is not true",
+         "displayFormat":"{expr1} [[is not true]]",
+         "paramCount":1,
+         "valueKind":"Scalar",
+         "exprType":"Unknown"
+      }
+   ]

@@ -1,0 +1,63 @@
+{
+	"root": {
+		"linkType": "All",
+		"enabled": true,
+		"conditions": [{
+			"justAdded": false,
+			"typeName": "SMPL",
+			"enabled": true,
+			"operatorID": "InList",
+			"expressions": [{
+				"typeName": "ENTATTR",
+				"id": "53"
+			}, {
+				"typeName": "CONST",
+				"dataType": "Int",
+				"kind": "List",
+				"value": "1",
+				"text": "Beverages"
+			}]
+		}, {
+			"justAdded": false,
+			"typeName": "SMPL",
+			"enabled": true,
+			"operatorID": "DateEqualSpecial",
+			"expressions": [{
+				"typeName": "ENTATTR",
+				"id": "41"
+			}, {
+				"typeName": "CONST",
+				"dataType": "Date",
+				"kind": "Scalar",
+				"value": "${Yesterday}",
+				"text": "Yesterday"
+			}]
+		}]
+	},
+	"columns": [{
+		"caption": "Customer Contact  name",
+		"sorting": "None",
+		"sortIndex": -1,
+		"expr": {
+			"typeName": "ENTATTR",
+			"id": "14"
+		}
+	}, {
+		"caption": "Product Name",
+		"sorting": "None",
+		"sortIndex": -1,
+		"expr": {
+			"typeName": "ENTATTR",
+			"id": "58"
+		}
+	}, {
+		"caption": "Product Unit price",
+		"sorting": "None",
+		"sortIndex": -1,
+		"expr": {
+			"typeName": "ENTATTR",
+			"id": "62"
+		}
+	}],
+	"justsorted": []
+}

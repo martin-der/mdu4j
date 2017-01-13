@@ -1,0 +1,17 @@
+{
+    "root": {
+        "linkType": "All",
+        "enabled": true,
+        "conditions": []
+    },
+    "columns": [{
+        "caption": "Customer Country",
+        "sorting": "None",
+        "sortIndex": -1,
+        "expr": {
+            "typeName": "ENTATTR",
+            "id": "Customer.Country"
+        }
+    }],
+    "justsorted": []
+}

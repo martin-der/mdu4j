@@ -1,0 +1,17 @@
+
+.log_code {
+	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+}
+
+.log_logLine { 
+}
+
+.log_logLine-marker:hover { 
+	-webkit-filter: blur(2px); 
+	        filter: blur(2px); 
+}
+
+.log_severity_debug { color: grey; }
+.log_severity_info { color: black; }
+.log_severity_warn { color: yellow; }
+.log_severity_error { color: red; }

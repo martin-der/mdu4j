@@ -1,0 +1,27 @@
+[
+      {
+         "id":"SUM",
+         "caption":"Sum",
+         "displayFormat":"[[Sum]] of {attr1}"
+      },
+      {
+         "id":"COUNT",
+         "caption":"Count",
+         "displayFormat":"[[Count]] of {attr1}"
+      },
+      {
+         "id":"AVG",
+         "caption":"Average",
+         "displayFormat":"[[Average]] of {attr1}"
+      },
+      {
+         "id":"MIN",
+         "caption":"Minimum",
+         "displayFormat":"[[Minimum]] of {attr1}"
+      },
+      {
+         "id":"MAX",
+         "caption":"Maximum",
+         "displayFormat":"[[Maximum]] of {attr1}"
+      }
+]

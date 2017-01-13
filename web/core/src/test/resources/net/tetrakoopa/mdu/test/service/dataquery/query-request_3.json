@@ -1,0 +1,110 @@
+{
+	"root": {
+		"linkType": "All",
+		"enabled": true,
+		"conditions": [{
+			"justAdded": false,
+			"typeName": "SMPL",
+			"enabled": true,
+			"operatorID": "Contains",
+			"expressions": [{
+				"typeName": "ENTATTR",
+				"id": "58"
+			}, {
+				"typeName": "CONST",
+				"dataType": "WideString",
+				"kind": "Scalar",
+				"value": "u",
+				"text": "u"
+			}]
+		}, {
+			"justAdded": false,
+			"typeName": "SMPL",
+			"enabled": true,
+			"operatorID": "Contains",
+			"expressions": [{
+				"typeName": "ENTATTR",
+				"id": "58"
+			}, {
+				"typeName": "CONST",
+				"dataType": "WideString",
+				"kind": "Scalar",
+				"value": "a",
+				"text": "a"
+			}]
+		}, {
+			"justAdded": false,
+			"typeName": "SMPL",
+			"enabled": true,
+			"operatorID": "Contains",
+			"expressions": [{
+				"typeName": "ENTATTR",
+				"id": "58"
+			}, {
+				"typeName": "CONST",
+				"dataType": "WideString",
+				"kind": "Scalar",
+				"value": "ui",
+				"text": "ui"
+			}]
+		}]
+	},
+	"columns": [{
+		"caption": "Product Name",
+		"sorting": "None",
+		"sortIndex": -1,
+		"expr": {
+			"typeName": "ENTATTR",
+			"id": 58
+		}
+	}, {
+		"caption": "Product OnSale",
+		"sorting": "None",
+		"sortIndex": -1,
+		"expr": {
+			"typeName": "ENTATTR",
+			"id": 56
+		}
+	}, {
+		"caption": "Product Units In Stock",
+		"sorting": "None",
+		"sortIndex": -1,
+		"expr": {
+			"typeName": "ENTATTR",
+			"id": "63"
+		}
+	}, {
+		"caption": "Product Quantity per unit",
+		"sorting": "None",
+		"sortIndex": -1,
+		"expr": {
+			"typeName": "ENTATTR",
+			"id": 59
+		}
+	}, {
+		"caption": "Product ReorderLevel",
+		"sorting": "None",
+		"sortIndex": -1,
+		"expr": {
+			"typeName": "ENTATTR",
+			"id": 60
+		}
+	}, {
+		"caption": "Product Units On Order",
+		"sorting": "None",
+		"sortIndex": -1,
+		"expr": {
+			"typeName": "ENTATTR",
+			"id": 64
+		}
+	}, {
+		"caption": "Product Category",
+		"sorting": "None",
+		"sortIndex": -1,
+		"expr": {
+			"typeName": "ENTATTR",
+			"id": "{Cat}.CategoryName"
+		}
+	}],
+	"justsorted": []
+}
