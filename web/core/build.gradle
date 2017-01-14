@@ -1,23 +1,10 @@
 
 
-version = '1.0.0-SNAPSHOT'
-
 apply plugin: 'java'
-
 
 sourceCompatibility = '$sourceCompatibility'
 targetCompatibility = '$targetCompatibility'
 
-
-/*publishing {
-	publications {
-		maven(MavenPublication) {
-			artifactId 'titi-${project.name}'
-
-			from components.java
-		}
-	}
-}*/
 
 dependencies {
 	testCompile project(':test')
