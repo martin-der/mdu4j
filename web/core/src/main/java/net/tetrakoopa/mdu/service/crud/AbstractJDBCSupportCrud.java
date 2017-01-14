@@ -172,7 +172,7 @@ public abstract class AbstractJDBCSupportCrud<ID extends Serializable, MDL> exte
 	}
 
 	@Override
-	public List<MDL> fetchAll() {
+	public List<MDL> retrieveAll() {
 		return jdbcTemplate.query(QUERY_FETCH_ALL, rowMapper);
 	}
 

@@ -47,7 +47,7 @@ public abstract class AbstractResourcesController {
 			}
 		}
 		try {
-			IOUtil.copy(IOUtil.getInputStream(path), response.getOutputStream());
+			IOUtil.copy(IOUtil.getResourceInputStream(path), response.getOutputStream());
 		} catch (FileNotFoundException fnfex) {
 			response.sendError(404);
 		} catch (IOException e) {

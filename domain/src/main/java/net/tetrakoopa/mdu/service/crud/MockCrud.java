@@ -131,7 +131,7 @@ public abstract class MockCrud<ID extends Serializable, MDL> implements Crud<ID,
 								triedToLoadPersistedDatasAndItFailed = true;
 								break;
 							}
-							unfreezeContent(IOUtil.getInputStream(resource));
+							unfreezeContent(IOUtil.getResourceInputStream(resource));
 						} catch (FileNotFoundException e) {
 							triedToLoadPersistedDatasAndItFailed = true;
 							break;
@@ -147,7 +147,7 @@ public abstract class MockCrud<ID extends Serializable, MDL> implements Crud<ID,
 							triedToLoadPersistedDatasAndItFailed = true;
 							break;
 						}
-							unfreezeContent(IOUtil.getInputStream(resource));
+							unfreezeContent(IOUtil.getResourceInputStream(resource));
 						} catch (FileNotFoundException e) {
 							triedToLoadPersistedDatasAndItFailed = true;
 							break;
@@ -352,7 +352,7 @@ public abstract class MockCrud<ID extends Serializable, MDL> implements Crud<ID,
 		}
 		
 		@Override
-		public List<MDL> fetchAll() throws CrudException {
+		public List<MDL> retrieveAll() throws CrudException {
 
 			final List<MDL> all = new ArrayList<MDL>();
 			for (final MDL object : objects) {
@@ -437,16 +437,16 @@ public abstract class MockCrud<ID extends Serializable, MDL> implements Crud<ID,
 	}
 
 	@Override
-	public List<MDL> fetchAll() throws CrudException {
+	public List<MDL> retrieveAll() throws CrudException {
 		try {
-			return instance().fetchAll();
+			return instance().retrieveAll();
 		} catch (Exception e) {
 			throw wrapped(e);
 		}
 	}
 
 	public final int count() throws CrudException {
-		return fetchAll().size();
+		return retrieveAll().size();
 	}
 
 	public final void freezeContent(OutputStream output) {

@@ -14,7 +14,7 @@ public class LogUtil {
 		Properties log4jProperties = new Properties();
 
 		try {
-			log4jProperties.load(IOUtil.getInputStream(LOG4J_PROPERTIES));
+			log4jProperties.load(IOUtil.getResourceInputStream(LOG4J_PROPERTIES));
 		} catch (FileNotFoundException e) {
 			return null;
 		}

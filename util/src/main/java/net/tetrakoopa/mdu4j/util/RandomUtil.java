@@ -9,7 +9,7 @@ import java.util.NoSuchElementException;
 /**
  * Contient des méthodes utilitaires pour des factories d'object de test
  */
-public class FakeUtil {
+public class RandomUtil {
 	
 	/** @return une chance sur deux de renvoyer <b>true</b> */
 	public static boolean random() {

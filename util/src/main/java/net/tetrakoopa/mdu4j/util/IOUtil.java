@@ -11,14 +11,15 @@ import java.io.OutputStream;
 
 
 public class IOUtil {
-	
-	public final static String DEFAULT_ENCODING = "utf8";
-	
-	private static int default_buffer_size = 2000;
+
+	public static final String DEFAULT_ENCODING = "utf-8";
+
+	private final static int DEFAULT_BUFFER_SIZE = 2000;
+	private static int buffer_size = DEFAULT_BUFFER_SIZE;
 
 	public static void copy(InputStream inputStream, OutputStream outputStream) throws IOException {
 		
-		byte buffer[] = new byte[default_buffer_size];
+		byte buffer[] = new byte[buffer_size];
 
 		copy(inputStream, outputStream, buffer);
 	}
@@ -31,38 +32,18 @@ public class IOUtil {
 	}
 
 	public static void copy(String source, OutputStream outputStream) throws IOException {
-
-		byte buffer[] = new byte[default_buffer_size];
-
-		copy(source, outputStream, buffer);
+		copy(source, outputStream, new byte[buffer_size]);
 	}
 	public static void copy(String source, OutputStream outputStream, byte[] buffer) throws IOException {
-		IOUtil.copy(new ByteArrayInputStream(source.getBytes()), outputStream);
+		IOUtil.copy(new ByteArrayInputStream(source.getBytes()), outputStream, buffer);
 	}
 
 	public static void copy(byte[] source, OutputStream outputStream) throws IOException {
-
-		byte buffer[] = new byte[default_buffer_size];
-
-		copy(source, outputStream, buffer);
+		copy(source, outputStream, new byte[buffer_size]);
 	}
 
 	public static void copy(byte[] source, OutputStream outputStream, byte[] buffer) throws IOException {
-		IOUtil.copy(new ByteArrayInputStream(source), outputStream);
-	}
-
-	/* -- Open Input Stream -- */
-
-	public static InputStream getInputStream(final String resource) throws FileNotFoundException {
-		return getInputStream(resource, IOUtil.class.getClassLoader());
-	}
-
-	public static InputStream getInputStream(final String resource, final ClassLoader classLoader) throws FileNotFoundException {
-		final InputStream stream = classLoader.getResourceAsStream(resource);
-		if (stream == null) {
-			throw new FileNotFoundException("Could not find resource '" + resource + "' in classpath");
-		}
-		return stream;
+		IOUtil.copy(new ByteArrayInputStream(source), outputStream, buffer);
 	}
 
 	/* -- Read Byte Array -- */
@@ -81,7 +62,19 @@ public class IOUtil {
 		return read(resource, classLoader);
 	}
 
-	/* -- Read as String -- */
+	/* -- Get resource -- */
+
+	public static InputStream getResourceInputStream(final String resource) throws FileNotFoundException {
+		return getResourceInputStream(resource, IOUtil.class.getClassLoader());
+	}
+
+	public static InputStream getResourceInputStream(final String resource, final ClassLoader classLoader) throws FileNotFoundException {
+		final InputStream stream = classLoader.getResourceAsStream(resource);
+		if (stream == null) {
+			throw new FileNotFoundException("Could not find resource '" + resource + "' in classpath");
+		}
+		return stream;
+	}
 
 	public static String readString(final String resource, final String encoding) throws IOException {
 		return readString(resource, IOUtil.class.getClassLoader(), encoding);
@@ -89,7 +82,7 @@ public class IOUtil {
 
 	public static String readString(final String resource, final ClassLoader classLoader, final String encoding)
 	throws IOException {
-		return readString(getInputStream(resource, classLoader), encoding);
+		return readString(getResourceInputStream(resource, classLoader), encoding);
 	}
 	
 	public static String readString(final String resource) throws IOException {
@@ -98,7 +91,7 @@ public class IOUtil {
 
 	public static String readString(final String resource, final ClassLoader classLoader)
 	throws IOException {
-		return readString(getInputStream(resource, classLoader), DEFAULT_ENCODING);
+		return readString(getResourceInputStream(resource, classLoader), DEFAULT_ENCODING);
 	}
 	
 	public static String readString(final InputStream input)

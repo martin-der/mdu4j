@@ -97,13 +97,13 @@ public class MockCRUDServiceTest {
 	@Test
 	public void checkFrozenDatasNoPreloading() throws CrudException {
 
-		Assert.assertTrue(REPO_NEVER_POPULATE.fetchAll().isEmpty());
+		Assert.assertTrue(REPO_NEVER_POPULATE.retrieveAll().isEmpty());
 	}
 
 	@Test
 	public void checkFrozenDatasPreloadingFromClasspath() throws CrudException {
 
-		Assert.assertFalse(REPO_ALWAYS_POPULATE.fetchAll().isEmpty());
+		Assert.assertFalse(REPO_ALWAYS_POPULATE.retrieveAll().isEmpty());
 		
 		Truc truc = REPO_ALWAYS_POPULATE.retrieve(1l);
 		Assert.assertEquals("Bar", truc.getName());

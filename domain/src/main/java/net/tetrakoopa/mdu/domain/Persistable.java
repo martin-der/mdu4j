@@ -2,13 +2,13 @@ package net.tetrakoopa.mdu.domain;
 
 import java.io.Serializable;
 
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+//import javax.persistence.Id;
+//import javax.persistence.MappedSuperclass;
 
-@MappedSuperclass
-public abstract class Persistable<ID extends Serializable> {
+//@MappedSuperclass
+public abstract class Persistable<ID extends Serializable> implements Serializable {
 
-	@Id
+	//@Id
 	private ID id;
 
 	public ID getId() {
