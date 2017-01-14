@@ -1,0 +1,27 @@
+
+apply plugin: 'java'
+
+sourceCompatibility = '$sourceCompatibility'
+targetCompatibility = '$targetCompatibility'
+
+dependencies {
+	testCompile project(':test')
+
+	compile "commons-io:commons-io:${property('version.commons-io')}"
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+	classifier = 'sources'
+	from sourceSets.main.allSource
+}
+
+/*task javadocJar(type: Jar, dependsOn: javadoc) {
+	classifier = 'javadoc'
+	from javadoc.destinationDir
+}*/
+
+artifacts {
+	archives sourcesJar
+	//archives javadocJar
+}
+

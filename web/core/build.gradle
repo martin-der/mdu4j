@@ -1,0 +1,36 @@
+
+
+version = '1.0.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+
+sourceCompatibility = '$sourceCompatibility'
+targetCompatibility = '$targetCompatibility'
+
+
+/*publishing {
+	publications {
+		maven(MavenPublication) {
+			artifactId 'titi-${project.name}'
+
+			from components.java
+		}
+	}
+}*/
+
+dependencies {
+	testCompile project(':test')
+	compile project(':util')
+	compile project(':domain')
+
+	compile "com.google.code.gson:gson:${property('version.google.gson')}"
+	compile "org.springframework:spring-context:${property('version.spring')}"
+	compile "org.springframework:spring-context-support:${property('version.spring')}"
+	compile "org.springframework:spring-dao:2.0.8"
+	compile "org.springframework:spring-jdbc:${property('version.spring')}"
+	compile "org.springframework:spring-web:${property('version.spring')}"
+	//compile "org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1"
+	compile "org.hibernate.java-persistence:jpa-api:2.0-cr-1"
+	compile "javax.servlet:servlet-api:${property('version.servlet-api')}"
+}

@@ -1,0 +1,16 @@
+
+
+subprojects {
+
+	apply plugin: 'java'
+
+	sourceCompatibility = '$sourceCompatibility'
+	targetCompatibility = '$targetCompatibility'
+
+	dependencies {
+		testCompile project(':test')
+		compile project(':util')
+		compile project(':domain')
+	}
+
+}
