@@ -13,7 +13,7 @@
 		http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
         
-	<context:component-scan  base-package="net.tetrakoopa.mdu.service" />
+	<context:component-scan  base-package="net.tetrakoopa.mdu4j.service" />
 
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="host" value="${mail:host}" />

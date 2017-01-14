@@ -5,10 +5,10 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.List;
 
-import net.tetrakoopa.mdu.service.crud.MockCrud;
-import net.tetrakoopa.mdu.service.crud.MockCrud.Service.PersistenceType;
-import net.tetrakoopa.mdu.service.crud.MockCrud.Service.PopulationStategy;
-import net.tetrakoopa.mdu.service.crud.exception.CrudException;
+import net.tetrakoopa.mdu4j.service.crud.MockCrud;
+import net.tetrakoopa.mdu4j.service.crud.MockCrud.Service.PersistenceType;
+import net.tetrakoopa.mdu4j.service.crud.MockCrud.Service.PopulationStategy;
+import net.tetrakoopa.mdu4j.service.crud.exception.CrudException;
 import net.tetrakoopa.mdu4j.test.things.Truc;
 
 import org.junit.Assert;
