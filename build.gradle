@@ -10,6 +10,17 @@ allprojects {
     apply plugin: 'maven'
 	apply plugin: 'java'
 
+
+    tasks.withType(JavaCompile) {
+        sourceCompatibility = '1.7'
+        targetCompatibility = '1.7'
+    }
+
+    /*compileJava.doFirst {
+        println "source compatibility " + sourceCompatibility
+        println "target compatibility " + targetCompatibility
+    }*/
+
     repositories {
         mavenCentral()
     }
