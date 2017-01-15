@@ -4,6 +4,10 @@ apply plugin: 'java'
 sourceCompatibility = '$sourceCompatibility'
 targetCompatibility = '$targetCompatibility'
 
+dependencies {
+	compile "junit:junit:4.4"
+}
+
 task sourcesJar(type: Jar, dependsOn: classes) {
 	classifier = 'sources'
 	from sourceSets.main.allSource
