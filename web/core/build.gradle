@@ -18,6 +18,6 @@ dependencies {
 	compile "org.springframework:spring-jdbc:${property('version.spring')}"
 	compile "org.springframework:spring-web:${property('version.spring')}"
 	//compile "org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1"
-	compile "org.hibernate.java-persistence:jpa-api:2.0-cr-1"
+	compile "org.hibernate.java-persistence:jpa-api:${property('version.hibernate-jpa-api')}"
 	compile "javax.servlet:servlet-api:${property('version.servlet-api')}"
 }
