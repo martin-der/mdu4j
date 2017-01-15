@@ -20,21 +20,13 @@ public class RIQueryServiceTest {
 
 	};
 
-	@Test
-	public void ttt() throws IOException {      
-		String templateStr = IOUtil.readString("net/tetrakoopa/mdu4j/service/dataquery/query-dbtemplate-response.json");
-
-		GSON.fromJson(templateStr, DataEngine.class);
-		
-
-	}
 
 	@Test
 	public void checkOperators() throws IOException {
 		// String operatorsStr =
 		// IOUtil.readString("/net/tetrakoopa/mdu4j/service/dataquery/operators.json");
 
-		List<Operator> operators = queryService.createOperators();
+		//List<Operator> operators = queryService.createOperators();
 		
 
 	}
