@@ -13,7 +13,7 @@ public class MappingHelperTest {
 
 	@Test(expected = MappingHelper.MappingException.class)
 	public void tryAddingNonExistingAttribute() throws InvocationTargetException, IllegalAccessException {
-		final MappingHelper mappingHelper = new MappingHelper(Foobar.class);
+		final MappingHelper mappingHelper = new MappingHelper();
 		mappingHelper.addAttribute("metaFoobar");
 	}
 
@@ -66,7 +66,7 @@ public class MappingHelperTest {
 	}
 
 	private MappingHelper createHelper() {
-		final MappingHelper helper = new MappingHelper(Foobar.class);
+		final MappingHelper helper = new MappingHelper();
 		helper.addAttribute("name");
 		helper.addAttribute("size");
 		helper.addAttribute("ready");
