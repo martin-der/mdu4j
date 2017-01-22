@@ -1,29 +1,36 @@
 
+//sourceCompatibility = '1.7'
+//targetCompatibility = '1.7'
+
+buildscript {
+    repositories {
+        mavenCentral()
+		jcenter()
+    }
+}
+
 subprojects {
 	tasks.withType(Jar) {
 		baseName = "$project.name".replaceAll('/','-')
 	}
 }
 
+
 allprojects {
 
-    apply plugin: 'maven'
-	apply plugin: 'java'
 
+    apply plugin: 'maven'
+    apply plugin: 'java'
 
     tasks.withType(JavaCompile) {
         sourceCompatibility = '1.7'
         targetCompatibility = '1.7'
     }
 
-    /*compileJava.doFirst {
-        println "source compatibility " + sourceCompatibility
-        println "target compatibility " + targetCompatibility
-    }*/
-
-    repositories {
-        mavenCentral()
-    }
+	repositories {
+		mavenCentral()
+		jcenter()
+	}
 
     group = 'com.github.martin-der.mdu4j'
     version = '1.0.0-SNAPSHOT'
