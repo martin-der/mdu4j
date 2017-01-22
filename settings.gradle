@@ -1,1 +1,2 @@
-include 'test', 'util', 'domain', 'web', 'web/core', 'web/admin'
+include 'test', 'util', 'domain', 'view', 'web', 'web/core', 'web/admin'
+

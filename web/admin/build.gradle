@@ -8,4 +8,5 @@ dependencies {
 	compile project(':domain')
 	compile project(':web/core')
 
+	compile "org.springframework:spring-context:${property('version.spring')}"
 }
