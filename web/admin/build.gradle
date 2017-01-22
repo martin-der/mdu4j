@@ -11,5 +11,5 @@ dependencies {
 	compile project(':util')
 	compile project(':domain')
 
-	compile "org.springframework:spring-context:${property('version.google.gson')}"
+	compile "org.springframework:spring-context:${property('version.spring')}"
 }
