@@ -1,4 +1,4 @@
-package net.tetrakoopa.mdu4j.util.view;
+package net.tetrakoopa.mdu4j.view;
 
 
 /**
@@ -31,7 +31,6 @@ public abstract class AgnosticBuilder {
 	/** Type Spécific view choice */
 	public static class ElementPresentation<W> {
 		/** How to display a boolean input */
-		@SuppressWarnings("javadoc")
 		public static class Boolean<W>
 		extends ElementPresentation<W> {
 			public static enum Widget {
@@ -46,7 +45,6 @@ public abstract class AgnosticBuilder {
 		}
 		
 		/** How to display a OneAmongstMany input */
-		@SuppressWarnings("javadoc")
 		public static enum OneAmongstMany {
 			RADIO_BUTTONS,
 			DROP_DOWN;

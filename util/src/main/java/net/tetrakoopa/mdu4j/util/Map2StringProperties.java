@@ -1,4 +1,4 @@
-package net.tetrakoopa.mdu.util;
+package net.tetrakoopa.mdu4j.util;
 
 import java.lang.reflect.Field;
 import java.util.Locale;
