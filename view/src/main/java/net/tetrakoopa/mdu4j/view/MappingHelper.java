@@ -1,7 +1,8 @@
 package net.tetrakoopa.mdu4j.view;
 
 import net.tetrakoopa.mdu4j.util.StringUtil;
-import net.tetrakoopa.mdu4j.util.view.UIElement;
+
+import org.springframework.core.GenericTypeResolver;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -10,7 +11,7 @@ import java.lang.reflect.Modifier;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MappingHelper<BEAN, VIEW> {
+public class MappingHelper<BEAN, VIEW> implements UIAttribute {
 
 	protected static class AttributeMapping<VIEW> {
 
@@ -37,16 +38,19 @@ public class MappingHelper<BEAN, VIEW> {
 	}
 
 	protected final Class<BEAN> beanClass;
+	protected final Class<VIEW> viewClass;
 	protected final Map<String, AttributeMapping> mappings = new HashMap<>();
 
-	public MappingHelper(Class<BEAN> beanClass) {
-		this.beanClass = (Class<BEAN>) beanClass;
+	public MappingHelper() {
+		final Class<?> genericArguments[] = GenericTypeResolver.resolveTypeArguments(this.getClass(),MappingHelper.class);
+		this.beanClass = (Class<BEAN>) genericArguments[0];
+		this.viewClass = (Class<VIEW>) genericArguments[1];
 		scanUIELements();
 	}
 
 	private void scanUIELements() {
 		for (Field field : beanClass.getDeclaredFields()) {
-			if (field.getAnnotation(UIElement.class) != null) {
+			if (field.getAnnotation(Element.class) != null) {
 				addAttribute(field.getName());
 			}
 		}

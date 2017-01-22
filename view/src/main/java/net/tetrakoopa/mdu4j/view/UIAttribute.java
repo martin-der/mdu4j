@@ -1,4 +1,4 @@
-package net.tetrakoopa.mdu4j.util.view;
+package net.tetrakoopa.mdu4j.view;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
