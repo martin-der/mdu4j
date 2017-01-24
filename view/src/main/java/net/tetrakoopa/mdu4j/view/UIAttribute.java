@@ -19,8 +19,8 @@ public interface UIAttribute {
 
 	@Retention(RetentionPolicy.RUNTIME)
 	@Target(ElementType.FIELD)
-	@interface Exclude {
-
+	@interface Partaking {
+		FieldPartaking value();
 	}
 
 	@Retention(RetentionPolicy.RUNTIME)
