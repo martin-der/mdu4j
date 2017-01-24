@@ -65,10 +65,12 @@ public class IOUtil {
 	/* -- Get resource -- */
 
 	public static InputStream getResourceInputStream(final String resource) throws FileNotFoundException {
-		return getResourceInputStream(resource, IOUtil.class.getClassLoader());
+		return getResourceInputStream(resource, null);
 	}
 
-	public static InputStream getResourceInputStream(final String resource, final ClassLoader classLoader) throws FileNotFoundException {
+	public static InputStream getResourceInputStream(final String resource, ClassLoader classLoader) throws FileNotFoundException {
+		if (classLoader == null)
+			classLoader = IOUtil.class.getClassLoader();
 		final InputStream stream = classLoader.getResourceAsStream(resource);
 		if (stream == null) {
 			throw new FileNotFoundException("Could not find resource '" + resource + "' in classpath");
