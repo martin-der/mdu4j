@@ -1,0 +1,60 @@
+[takeOffDistance]
+  Label : takeOffDistance
+  Type : NUMBER
+  Value : 250
+  Parent : <none>
+[landingDistance]
+  Label : landingDistance
+  Type : NUMBER
+  Value : 300
+  Parent : <none>
+[id]
+  Label : identifiant
+  Type : TEXT
+  Value : A347
+  Parent : <none>
+[engines]
+  Label : engines
+  Type : ARRAY
+  Value : 4
+  Parent : <none>
+    [0]
+      Label : 0
+      Type : OBJECT
+      Value : net.tetrakoopa.mdu4j.view.AbstractBuilderTest$Engine
+      Parent : engines
+        [horsePower]
+          Label : horsePower
+          Type : NUMBER
+          Value : 1200.0
+          Parent : 0
+    [1]
+      Label : 1
+      Type : OBJECT
+      Value : net.tetrakoopa.mdu4j.view.AbstractBuilderTest$Engine
+      Parent : engines
+        [horsePower]
+          Label : horsePower
+          Type : NUMBER
+          Value : 1200.0
+          Parent : 1
+    [2]
+      Label : 2
+      Type : OBJECT
+      Value : net.tetrakoopa.mdu4j.view.AbstractBuilderTest$Engine
+      Parent : engines
+        [horsePower]
+          Label : horsePower
+          Type : NUMBER
+          Value : 1200.0
+          Parent : 2
+    [3]
+      Label : 3
+      Type : OBJECT
+      Value : net.tetrakoopa.mdu4j.view.AbstractBuilderTest$Engine
+      Parent : engines
+        [horsePower]
+          Label : horsePower
+          Type : NUMBER
+          Value : 1200.0
+          Parent : 3

@@ -123,7 +123,15 @@ public abstract class AbstractBuilder<CONTEXT> implements UIAttribute {
 			label = String.valueOf(internalReference.index);
 		}
 
-		final ViewElement element = new ViewElement(internalReference, label, type, clazz, bean, parent);
+		final Object value;
+		if (type == Type.ARRAY) {
+			value = Array.getLength(bean);
+		} else if (type == Type.OBJECT ) {
+			value = clazz.getName();
+		} else {
+			value = bean;
+		}
+		final ViewElement element = new ViewElement(internalReference, label, type, clazz, value, parent);
 
 		elements.add(element);
 

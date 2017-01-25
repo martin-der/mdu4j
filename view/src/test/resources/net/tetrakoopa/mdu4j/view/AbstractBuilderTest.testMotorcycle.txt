@@ -1,0 +1,20 @@
+[id]
+  Label : identifiant
+  Type : TEXT
+  Value : null
+  Parent : <none>
+[engines]
+  Label : engines
+  Type : ARRAY
+  Value : 1
+  Parent : <none>
+    [0]
+      Label : 0
+      Type : OBJECT
+      Value : net.tetrakoopa.mdu4j.view.AbstractBuilderTest$Engine
+      Parent : engines
+        [horsePower]
+          Label : horsePower
+          Type : NUMBER
+          Value : 1.5
+          Parent : 0
