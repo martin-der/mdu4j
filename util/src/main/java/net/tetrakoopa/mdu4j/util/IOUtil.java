@@ -100,20 +100,56 @@ public class IOUtil {
 	throws IOException {
 		return readString(input, DEFAULT_ENCODING);
 	}
-	
+
 	public static String readString(final InputStream input, final String encoding)
-	throws IOException {
+			throws IOException {
 		final BufferedReader reader = new BufferedReader(new InputStreamReader(input, encoding));
-		
+
 		final StringBuffer result = new StringBuffer();
-		
+
 		String line;
 		while ((line = reader.readLine()) != null) {
 			result.append(line);
 			result.append('\n');
 		}
-		
+
 		return result.toString();
+	}
+
+	public static String readRawString(final String resource, final String encoding) throws IOException {
+		return readRawString(resource, IOUtil.class.getClassLoader(), encoding);
+	}
+
+	public static String readRawString(final String resource, final ClassLoader classLoader, final String encoding)
+			throws IOException {
+		return readRawString(getResourceInputStream(resource, classLoader), encoding);
+	}
+
+	public static String readRawString(final String resource) throws IOException {
+		return readRawString(resource, IOUtil.class.getClassLoader());
+	}
+
+	public static String readRawString(final String resource, final ClassLoader classLoader)
+			throws IOException {
+		return readRawString(getResourceInputStream(resource, classLoader), DEFAULT_ENCODING);
+	}
+
+	public static String readRawString(final InputStream input)
+			throws IOException {
+		return readRawString(input, DEFAULT_ENCODING);
+	}
+
+	public static String readRawString(final InputStream input, final String encoding)
+			throws IOException {
+		final ByteArrayOutputStream output = new ByteArrayOutputStream();
+
+		int l;
+		final byte buffer [] = new byte[1024];
+		while((l=input.read(buffer))>0) {
+			output.write(buffer,0,l);;
+		}
+
+		return new String(output.toByteArray(), encoding);
 	}
 
 }
