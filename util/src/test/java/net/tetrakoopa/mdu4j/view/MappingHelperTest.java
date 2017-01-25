@@ -2,12 +2,15 @@ package net.tetrakoopa.mdu4j.view;
 
 
 import net.tetrakoopa.mdu4j.test.things.Foobar;
+
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.lang.reflect.InvocationTargetException;
 
 import static org.junit.Assert.assertEquals;
 
+@Ignore
 public class MappingHelperTest {
 
 
