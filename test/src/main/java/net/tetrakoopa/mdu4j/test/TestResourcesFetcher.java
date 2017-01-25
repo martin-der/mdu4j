@@ -1,6 +1,7 @@
 package net.tetrakoopa.mdu4j.test;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -65,7 +66,7 @@ public class TestResourcesFetcher {
 	public String getTextForThisMethod(String suffix, ClassLoader classLoader, String encoding) throws IOException {
 		if (encoding == null)
 			encoding = DEFAULT_ENCODING;
-		return readString(getResourceForThisMethod(suffix, classLoader), encoding);
+		return readRawString(getResourceForThisMethod(suffix, classLoader), encoding);
 	}
 
 	private String readString(final InputStream input, final String encoding)
@@ -81,6 +82,19 @@ public class TestResourcesFetcher {
 		}
 
 		return result.toString();
+	}
+
+	private String readRawString(final InputStream input, final String encoding) throws IOException {
+
+		final ByteArrayOutputStream output = new ByteArrayOutputStream();
+
+		int l;
+		final byte buffer [] = new byte[1024];
+		while((l=input.read(buffer))>0) {
+			output.write(buffer,0,l);;
+		}
+
+		return new String(output.toByteArray(), encoding);
 	}
 
 }
