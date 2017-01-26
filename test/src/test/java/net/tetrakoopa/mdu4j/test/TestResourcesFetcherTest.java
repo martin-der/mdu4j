@@ -16,7 +16,7 @@ public class TestResourcesFetcherTest {
 		Assert.assertEquals("That's exactly what I needed.", text);
 	}
 
-	@Test(expected = FileNotFoundException.class)
+	@Test(expected = IllegalArgumentException.class)
 	public void cannotGetResource() throws IOException {
 		new TestResourcesFetcher().getTextForThisMethod("txt");
 	}
