@@ -1,7 +1,4 @@
 
-//sourceCompatibility = '1.7'
-//targetCompatibility = '1.7'
-
 buildscript {
     repositories {
         mavenCentral()
@@ -23,8 +20,10 @@ allprojects {
     apply plugin: 'java'
 
     tasks.withType(JavaCompile) {
-        sourceCompatibility = '1.7'
-        targetCompatibility = '1.7'
+		sourceCompatibility = '1.7'
+		targetCompatibility = '1.7'
+        //sourceCompatibility = "${sourceCompatibility}"
+        //targetCompatibility = "${targetCompatibility}"
     }
 
 	repositories {
@@ -34,6 +33,12 @@ allprojects {
 
     group = 'com.github.martin-der.mdu4j'
     version = '1.0.0-SNAPSHOT'
+
+	test {
+		testLogging {
+			exceptionFormat = 'full'
+		}
+	}
 
     install {
         repositories.mavenInstaller {
