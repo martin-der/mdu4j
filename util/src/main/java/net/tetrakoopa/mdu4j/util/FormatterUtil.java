@@ -10,7 +10,7 @@ public class FormatterUtil {
 	 * Equivalent to <code>fileSizeAsString(size, FILE_SIZE_FORMAT_EN)</code>
 	 */
 	public static String fileSizeAsString(long size) {
-		return fileSizeAsString(size, "%1$.3f %2$sb.");
+		return fileSizeAsString(size, FILE_SIZE_FORMAT_EN);
 	}
 
 	/**
