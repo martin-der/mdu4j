@@ -18,7 +18,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
-import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
+import org.springframework.jdbc.core.SingleColumnRowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 
@@ -28,7 +28,7 @@ public abstract class AbstractJDBCSupportCrud<ID extends Serializable, MDL> exte
     
     private String modelName;
     
-    private ParameterizedRowMapper<MDL> rowMapper;
+    private SingleColumnRowMapper<MDL> rowMapper;
     private PojoMapper<MDL> pojoMapper;
     private String tableName;
     private String [] rowNames;
@@ -96,7 +96,7 @@ public abstract class AbstractJDBCSupportCrud<ID extends Serializable, MDL> exte
 	protected abstract ID getModelId(MDL model);
 	protected abstract void setModelId(MDL model, ID id);
 	protected abstract ID getConvertFromSqlKey(Number key);
-	protected abstract ParameterizedRowMapper<MDL> createRowMapper();
+	protected abstract SingleColumnRowMapper<MDL> createRowMapper();
 	protected abstract PojoMapper<MDL> createPojoMapper();
 	protected abstract String createIDName();
 	protected abstract String [] createRowNames();

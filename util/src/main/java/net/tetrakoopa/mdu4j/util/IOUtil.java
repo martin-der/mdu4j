@@ -3,11 +3,13 @@ package net.tetrakoopa.mdu4j.util;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.PrintWriter;
 
 
 public class IOUtil {
@@ -18,10 +20,7 @@ public class IOUtil {
 	private static int buffer_size = DEFAULT_BUFFER_SIZE;
 
 	public static void copy(InputStream inputStream, OutputStream outputStream) throws IOException {
-		
-		byte buffer[] = new byte[buffer_size];
-
-		copy(inputStream, outputStream, buffer);
+		copy(inputStream, outputStream, new byte[buffer_size]);
 	}
 
 	public static void copy(InputStream inputStream, OutputStream outputStream, byte[] buffer) throws IOException {
@@ -45,6 +44,24 @@ public class IOUtil {
 	public static void copy(byte[] source, OutputStream outputStream, byte[] buffer) throws IOException {
 		IOUtil.copy(new ByteArrayInputStream(source), outputStream, buffer);
 	}
+
+	public static void copy(byte[] source, PrintWriter writer) throws IOException {
+		IOUtil.copy(new ByteArrayInputStream(source), writer);
+	}
+	public static void copy(InputStream source, PrintWriter writer) throws IOException {
+		final BufferedReader br = new BufferedReader(new InputStreamReader(source));
+
+		String line;
+		try {
+			while ((line = br.readLine()) != null) {
+				writer.print(line);
+				writer.print("\n");
+			}
+		} finally {
+			br.close();
+		}
+	}
+
 
 	/* -- Read Byte Array -- */
 

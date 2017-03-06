@@ -1,6 +1,12 @@
 package net.tetrakoopa.mdu4j.util;
 
 
+import java.io.BufferedOutputStream;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
+
 public class ExceptionUtil {
 
 	/**
@@ -62,4 +68,16 @@ public class ExceptionUtil {
 		return messages.toString();
 	}
 
+	public static String getStacktrace(Throwable exception) {
+		try {
+			return getStacktrace(exception, "utf-8");
+		} catch (UnsupportedEncodingException e) {
+			throw new IllegalArgumentException(e.getMessage(), e);
+		}
+	}
+	public static String getStacktrace(Throwable exception, String encoding) throws UnsupportedEncodingException {
+		final ByteArrayOutputStream ouput = new ByteArrayOutputStream();
+		exception.printStackTrace(new PrintStream(ouput));
+		return new String(ouput.toByteArray(), encoding);
+	}
 }

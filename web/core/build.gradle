@@ -6,6 +6,9 @@ dependencies {
 	testCompile project(':test')
 	compile project(':util')
 	compile project(':domain')
+	compile project(':view')
+
+	compile "org.slf4j:slf4j-api:${property('version.slf4j')}"
 
 	compile "com.google.code.gson:gson:${property('version.google.gson')}"
 	compile "org.springframework:spring-context:${property('version.spring')}"
@@ -13,7 +16,11 @@ dependencies {
 	compile "org.springframework:spring-dao:2.0.8"
 	compile "org.springframework:spring-jdbc:${property('version.spring')}"
 	compile "org.springframework:spring-web:${property('version.spring')}"
+	compile "org.springframework.security:spring-security-core:${property('version.spring')}"
 	//compile "org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1"
 	compile "org.hibernate.java-persistence:jpa-api:${property('version.hibernate-jpa-api')}"
-	compile "javax.servlet:servlet-api:${property('version.servlet-api')}"
+	compileOnly "javax.servlet:servlet-api:${property('version.servlet-api')}"
+	compile "net.sf.ehcache:ehcache:${property('version.ehcache')}"
+	compile "javax.mail:mail:1.5.0-b01"
+
 }

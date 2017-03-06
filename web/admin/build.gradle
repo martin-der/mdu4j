@@ -9,4 +9,6 @@ dependencies {
 	compile project(':web/core')
 
 	compile "org.springframework:spring-context:${property('version.spring')}"
+	compileOnly "javax.servlet:servlet-api:${property('version.servlet-api')}"
+	compile "ch.qos.logback:logback-classic:${property('version.logback')}"
 }

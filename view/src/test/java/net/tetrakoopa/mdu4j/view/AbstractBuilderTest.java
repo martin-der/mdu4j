@@ -25,14 +25,14 @@ public class AbstractBuilderTest {
 			this.horsePower = horsePower;
 		}
 	}
-	public static class Vehicule {
+	public static class Vehicle {
 
 		@UIAttribute.Label("identifiant")
 		private String id;
 
 		protected final Engine engines[];
 
-		protected Vehicule(Engine[] engines) {
+		protected Vehicle(Engine[] engines) {
 			this.engines = engines;
 		}
 
@@ -44,7 +44,7 @@ public class AbstractBuilderTest {
 			this.id = id;
 		}
 	}
-	public static class Plane extends Vehicule {
+	public static class Plane extends Vehicle {
 		private int takeOffDistance;
 		private int landingDistance;
 
@@ -52,11 +52,30 @@ public class AbstractBuilderTest {
 			super(engines);
 		}
 	}
-	public static class Motorcycle extends Vehicule {
+	public static class Motorcycle extends Vehicle {
 		public Motorcycle(float horsePower) {
 			super(new Engine[] {new Engine()});
 			engines[0].setHorsePower(horsePower);
 		}
+	}
+
+	public static class Rocket extends Vehicle {
+
+		private Rocket attachedRocket;
+
+		public Rocket(float horsePower) {
+			super(new Engine[] {new Engine()});
+			engines[0].setHorsePower(horsePower);
+		}
+
+		public Rocket getAttachedRocket() {
+			return attachedRocket;
+		}
+
+		public void setAttachedRocket(Rocket attachedRocket) {
+			this.attachedRocket = attachedRocket;
+		}
+
 	}
 
 	@Test
@@ -85,11 +104,27 @@ public class AbstractBuilderTest {
 	@Test
 	public void testMotorcycle() {
 
-		final Vehicule vehicule = new Motorcycle(1.5f);
+		final Vehicle vehicle = new Motorcycle(1.5f);
 
 		final ToStringBuilder builder = printerBuilder(System.out);
 
-		builder.build(null, vehicule);
+		builder.build(null, vehicle);
+
+		Assert.assertEquals(testResourcesFetcher.getTextForThisMethod("txt"), builder.getResult());
+	}
+
+	@Test
+	public void testRocket() {
+
+		final Rocket rocket = new Rocket(1000f);
+
+		// Oops, settings itself as attached rocket
+		// let's hope it won't turn the build into a endless loop
+		rocket.setAttachedRocket(rocket);
+
+		final ToStringBuilder builder = printerBuilder(System.out);
+
+		builder.build(null, rocket);
 
 		Assert.assertEquals(testResourcesFetcher.getTextForThisMethod("txt"), builder.getResult());
 	}

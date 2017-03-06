@@ -10,7 +10,14 @@ import java.io.InputStream;
 public class IOUtilTest {
 
 	@Test
-	public void readAResourceFileWithDifferentCR() throws IOException {
+	public void readAResourceFileWithVariousCR() throws IOException {
+		final InputStream input = getClass().getClassLoader().getResourceAsStream("net/tetrakoopa/mdu4j/util/IOUtilTest.readAResourceFileWithDifferentCR.txt");
+		final String text = IOUtil.readRawString(input);
+		Assert.assertEquals("This\nis\nmultilines\ntext", text);
+	}
+
+	@Test
+	public void readAResourceFile() throws IOException {
 		final InputStream input = getClass().getClassLoader().getResourceAsStream("net/tetrakoopa/mdu4j/util/IOUtilTest.readAResourceFileWithDifferentCR.txt");
 		final String text = IOUtil.readRawString(input);
 		Assert.assertEquals("This\nis\nmultilines\ntext", text);

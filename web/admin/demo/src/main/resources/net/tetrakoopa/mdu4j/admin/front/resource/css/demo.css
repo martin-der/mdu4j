@@ -1,0 +1,211 @@
+a {
+    color: black;
+}
+a:visited {
+    color: black;
+}
+
+table.main {
+    width: 100%;
+    border-spacing: 0;
+}
+table.table>tbody>tr>th {
+    border-bottom: 1px black solid;
+}
+table.table>tbody>tr.even {
+    background : rgb(243, 243, 243)
+}
+table.table>tbody>tr.odd {
+
+}
+
+.code pre {
+    background: black;
+    color: white;
+    padding: 0.5em;
+}
+
+img.icon {
+    width: 20px;
+    height: 20px;
+}
+img.icon.off {
+    -webkit-filter: grayscale(100%);
+    -moz-filter:    grayscale(100%);
+    -o-filter:      grayscale(100%);
+}
+
+.title.container .global-info {
+    text-align: right;
+}
+
+h1,h2,h3 {
+    text-align: center; color: #6a8899; font-family: verdana,arial,sans serif;
+}
+
+body {
+    background: -webkit-linear-gradient(top, rgb(136, 138, 135), rgb(244, 244, 244));
+}
+
+a:hover {
+    color: #C21B17
+}
+.container {
+    background-color: white;
+    border-radius: 2px;
+    padding: 1.2em;
+    margin: 4px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+span.quick-action {
+    border : 1px rgba(255,255,255,0) solid;
+    padding: 2px;
+    margin-left: 1em;
+}
+span.quick-action:hover {
+    padding: 2px; border : 1px rgba(255,0,0,1) solid; border-radius: 3px
+}
+
+ul.module, ul.choice, ul.action {
+    padding : 0px;
+}
+
+.action {
+    border-radius: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    border: 1px rgba( 0, 0, 0, 0) solid;
+    margin-top : 0.3em;
+    margin-bottom : 0.3em;
+}
+.action>a>span {
+    display: block;
+}
+
+.action:hover *,.action.selected * {
+    color: white;
+}
+.action a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.action.admin.selected {
+    border-color: rgba( 0, 0, 0, 0.5);
+    background: rgba( 255, 0, 0, 0.5);
+}
+.action.admin:hover {
+    border-color: black;
+    background: rgb(255, 0, 0);
+}
+
+.action.verb.selected {
+    border-color: rgba( 0, 0, 0, 0.5);
+    background: rgba(0, 100, 255, 0.5);
+}
+.action.verb:hover {
+    border-color: black;
+    background: rgb(0, 100, 255);
+}
+
+.action.quicky.selected {
+    border-color: rgba( 0, 0, 0, 0.5);
+    background: rgba( 181, 0, 255, 0.5);
+}
+.action.quicky:hover {
+    border-color: black;
+    background: rgb(181, 0, 255);
+}
+
+.action.humble.selected {
+    border-color: rgba( 0, 0, 0, 0.5);
+    background: rgba( 0, 255, 191, 0.5);
+}
+.action.humble:hover {
+    border-color: black;
+    background: rgb(0, 255, 191);
+}
+
+/** Basic UI */
+
+input.positive-action {
+
+}
+input.neutral-action {
+
+}
+input.negative-action {
+
+}
+
+/** Dynamic-Form */
+
+input.valid {
+    background-color: rgba(34, 139, 34, 0.18);
+}
+
+.visual-validation.invalid {
+    opacity: 0.2;
+    -webkit-filter: grayscale(100%);
+    -moz-filter:    grayscale(100%);
+    -o-filter:      grayscale(100%);
+}
+.visual-validation.valid {
+    color: green;
+}
+
+
+/** Notifications */
+
+.text-info {
+    background: url(../image/icon/severity-warning.png) no-repeat 10px center #86ffa1;
+    padding-left: 70px;
+}
+.text-warning {
+    background: url(../image/icon/severity-warning.png) no-repeat 10px center #feb;
+    padding-left: 70px;
+}
+.text-error {
+    background: url(../image/icon/severity-error.png) no-repeat 10px center #ff6450;
+    padding-left: 70px;
+}
+
+
+/** Classy */
+
+h2.hit-the-floor {
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+}
+
+/*@keyframes shrinkgrow {
+    0% { transform: scale(0); }
+    12.5% { transform: scale(1); }
+    25% { transform: scale(1); }
+    33% { transform: scale(0); }
+    100% { transform: scale(0); }
+}
+h2.loading {
+
+}*/
+
+/** font-icons */
+
+li.action.admin.selected>a>span>i {
+    color: #E33100;
+    text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #E33100,0 0 30px #E33100,0 0 40px #E33100,0 0 50px #E33100,0 0 75px #E33100;
+}
+i.big-title {
+    color: rgba(227, 49, 0, 0.8);
+    text-shadow: 1px 4px 6px #FFF,0 0 0 #000,1px 4px 6px #FFF;
+}
+
+li.action.verb>a>span>i {
+    color: #2DAEBF;
+    text-shadow: 0px 1px 0px #0092b3,0px 2px 0px #0087a6,0px 3px 0px #008099,0px 4px 0px #00758c,0px 5px 0px #555,0px 6px 0px #006a80,0px 0px 0px #006073,0px 8px 7px #005566;
+}
+

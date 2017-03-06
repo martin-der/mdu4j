@@ -38,4 +38,12 @@ public interface UIAttribute {
 	@interface Order {
 		int value();
 	}
+
+	@Retention(RetentionPolicy.RUNTIME)
+	@Target({ElementType.FIELD, ElementType.TYPE})
+	@interface Glyph {
+		String value();
+	}
+
+
 }

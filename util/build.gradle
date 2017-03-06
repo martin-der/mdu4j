@@ -5,6 +5,8 @@ dependencies {
 	testCompile project(':test')
 
 	compile "commons-io:commons-io:${property('version.commons-io')}"
+	compile "org.springframework:spring-core:${property('version.spring')}"
+	compileOnly "ch.qos.logback:logback-classic:${property('version.logback')}"
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {

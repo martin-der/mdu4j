@@ -1,0 +1,15 @@
+
+
+apply plugin: 'war'
+apply plugin: 'jetty'
+
+dependencies {
+	compile project(':web/admin')
+	compileOnly "javax.servlet:servlet-api:${property('version.servlet-api')}"
+}
+
+jettyRun {
+	httpPort = 50080
+	contextPath = '/'
+}
+

@@ -1,18 +1,18 @@
-.icon-style1 {
+.font-icon-style1 {
 	font-size: 70px;color:#B8D30B;
 }
-.icon-style2 {
+.font-icon-style2 {
 	font-size: 70px;color:#2DAEBF;text-shadow:0px 1px 0px #0092b3,0px 2px 0px #0087a6,0px 3px 0px #008099,0px 4px 0px #00758c,0px 5px 0px #555,0px 6px 0px #006a80,0px 0px 0px #006073,0px 8px 7px #005566;
 }
-.icon-style3 {
+.font-icon-style3 {
 	font-size: 70px;color:#E33100;
 	text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #E33100,0 0 30px #E33100,0 0 40px #E33100,0 0 50px #E33100,0 0 75px #E33100;
 }
-.icon-style4 {
+.font-icon-style4 {
 	font-size: 70px;text-shadow:0 1px 3px rgba(0,0,0,0.25);
 	color: #A9014B;
 }
-.icon-style5 {
+.font-icon-style5 {
 	font-size: 70px;
 	color: rgba(245,159,26,0.8);
 	text-shadow: 1px 4px 6px #FFF,0 0 0 #000,1px 4px 6px #FFF;

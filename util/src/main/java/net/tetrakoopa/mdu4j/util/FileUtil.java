@@ -1,8 +1,5 @@
 package net.tetrakoopa.mdu4j.util;
 
-import net.tetrakoopa.mdu4j.util.FormatterUtil;
-import org.apache.commons.io.input.ReaderInputStream;
-
 import java.io.*;
 
 public class FileUtil {

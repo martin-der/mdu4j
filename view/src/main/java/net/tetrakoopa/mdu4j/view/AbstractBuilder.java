@@ -1,18 +1,15 @@
 package net.tetrakoopa.mdu4j.view;
 
 
-import net.tetrakoopa.mdu4j.util.ReflectionUtil;
-
 import org.springframework.util.ReflectionUtils;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
-/**
- * Classe parente des classes servant de monteur pour une vue<br/>
- */
 public abstract class AbstractBuilder<CONTEXT> implements UIAttribute {
 	
 	/** Type de donnée => influe sur le Contrôle généré */
@@ -179,6 +176,8 @@ public abstract class AbstractBuilder<CONTEXT> implements UIAttribute {
 			return Type.NUMBER;
 		if (clazz.equals(Float.class) || clazz.equals(Float.TYPE) || clazz.equals(Double.class) || clazz.equals(Double.TYPE))
 			return Type.NUMBER;
+		if (clazz.equals(Date.class) || clazz.equals(Calendar.class) )
+			return Type.DATE;
 		return Type.OBJECT;
 	}
 
