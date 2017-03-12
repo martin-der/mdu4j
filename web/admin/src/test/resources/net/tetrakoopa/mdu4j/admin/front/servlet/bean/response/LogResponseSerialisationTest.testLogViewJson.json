@@ -1,0 +1,15 @@
+{
+   "logAction" : {
+      "status" : {
+         "code" : "OK",
+         "message" : "All is goooood"
+      },
+      "name" : "VIEW",
+      "logs" : {
+         "log" : [ {
+            "rolledInstance" : false,
+            "content" : "qdqsdqs"
+         } ]
+      }
+   }
+}

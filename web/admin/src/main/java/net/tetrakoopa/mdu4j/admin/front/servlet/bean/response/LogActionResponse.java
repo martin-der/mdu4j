@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@XmlRootElement(name="cacheAction")
+@XmlRootElement(name="logAction", namespace= ActionResponse.XMLNS)
 @XmlAccessorType(XmlAccessType.FIELD)
 public class LogActionResponse extends ActionResponse {
 

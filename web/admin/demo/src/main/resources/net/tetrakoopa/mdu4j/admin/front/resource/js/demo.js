@@ -69,7 +69,9 @@ jQuery(function() {
 		post_process : {
 			done : function(theme, context) {
 				if (context.trigger == 'setup') {
-					jQuery.growl.notice({title: "Theme loaded", message: "Actual theme is '"+theme.label+"'"});
+					if (document.referrer && document.referrer !== "") {
+						jQuery.growl.notice({title: "Theme loaded", message: "Actual theme is '"+theme.label+"'"});
+					}
 				} else {
 					jQuery.growl.notice({title: "Theme changed", message: "Theme now is '"+theme.label+"'"});
 				}
@@ -105,6 +107,10 @@ jQuery(function() {
 			new Theme.Reference('CocoIsGone','Coco')
 		],
 	});
+
+	jQuery(document).keypress(function(e) {
+		alert("'"+e.which+"' was pressed!! "+(e.ctrlKey?'+ Ctrl':'')+(e.altlKey?'+ Alt':''));
+    });
 
 	try {
 		themeConfigurator.setup();

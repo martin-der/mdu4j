@@ -6,10 +6,13 @@ import net.tetrakoopa.mdu4j.admin.front.servlet.bean.response.CacheResponse;
 import net.tetrakoopa.mdu4j.front.servlet.bean.response.ActionResponse;
 import net.tetrakoopa.mdu4j.util.test.AbstractSerialisationTest;
 
-import org.junit.Ignore;
 import org.junit.Test;
+import org.springframework.util.ReflectionUtils;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 import static org.junit.Assert.*;
 
@@ -51,7 +54,6 @@ public class CacheActionResponseSerialisationTest extends AbstractSerialisationT
 
 
     @Test
-    @Ignore
     public void testCacheResetJson() {
 
         String text =  serializeJson(buildResetResponse());
@@ -61,7 +63,6 @@ public class CacheActionResponseSerialisationTest extends AbstractSerialisationT
     }
 
     @Test
-    @Ignore
     public void testCacheResetXml() {
 
         String text =  serializeXml(buildResetResponse());
@@ -72,7 +73,6 @@ public class CacheActionResponseSerialisationTest extends AbstractSerialisationT
     }
 
     @Test
-    @Ignore
     public void testCacheViewJson() {
 
         String text =  serializeJson(buildViewResponse());
@@ -83,7 +83,6 @@ public class CacheActionResponseSerialisationTest extends AbstractSerialisationT
     }
 
     @Test
-    @Ignore
     public void testCacheViewXml() {
 
         String text =  serializeXml(buildViewResponse());
@@ -105,12 +104,12 @@ public class CacheActionResponseSerialisationTest extends AbstractSerialisationT
 
         response.setInvolvedCaches(new ArrayList<CacheResponse>());
 
-        CacheResponse cache = new CacheResponse();
+        CacheResponse cache = createCacheResponse();
         cache.setName("Cachon");
         cache.getContent().put("Truc",new TrucDeCache(5,"lalala").toString());
         response.getInvolvedCaches().add(cache);
 
-        cache = new CacheResponse();
+        cache = createCacheResponse();
         cache.setName("Cachou-le-cache-casse-cou");
         cache.getContent().put("Clavier","azerty");
         cache.getContent().put("Nouriture","fraise des bois");
@@ -118,6 +117,27 @@ public class CacheActionResponseSerialisationTest extends AbstractSerialisationT
         response.getInvolvedCaches().add(cache);
 
         return response;
+    }
+
+    public static class OrderedContentCacheResponse extends CacheResponse {
+
+    	@Override
+    	public Map<String, Object> getContent() {
+			final Field contentField = ReflectionUtils.findField(this.getClass(), "content");
+			ReflectionUtils.makeAccessible(contentField);
+			if (ReflectionUtils.getField(contentField, this)==null)
+				ReflectionUtils.setField(contentField, this, new LinkedHashMap());
+			return super.getContent();
+		}
+
+	}
+
+    /**
+     * Create a 'CacheResponse' with 'LinkedHashMap' for content.
+     * This way cache content will be ordered
+     */
+    private CacheResponse createCacheResponse() {
+        return new OrderedContentCacheResponse();
     }
 
     private CacheActionResponse buildResetResponse() {
@@ -131,11 +151,11 @@ public class CacheActionResponseSerialisationTest extends AbstractSerialisationT
 
         response.setInvolvedCaches(new ArrayList<CacheResponse>());
 
-        CacheResponse cache = new CacheResponse();
+        CacheResponse cache = createCacheResponse();
         cache.setName("Cachix");
         response.getInvolvedCaches().add(cache);
 
-        cache = new CacheResponse();
+        cache = createCacheResponse();
         cache.setName("Cacache-le-cache");
         response.getInvolvedCaches().add(cache);
 

@@ -1,0 +1,24 @@
+{
+   "logAction" : {
+      "status" : {
+         "code" : "OK",
+         "message" : "All is goooood"
+      },
+      "name" : "VIEW",
+      "logs" : {
+         "log" : [ {
+            "name" : "Regular",
+            "file" : "c:/some/where/log",
+            "rolledInstance" : false
+         }, {
+            "name" : "SecurityWatchFile",
+            "file" : "c:/some/where/else/log",
+            "rolledInstance" : false
+         }, {
+            "name" : "SecurityWatchFile",
+            "file" : "c:/some/where/else/log",
+            "rolledInstance" : true
+         } ]
+      }
+   }
+}

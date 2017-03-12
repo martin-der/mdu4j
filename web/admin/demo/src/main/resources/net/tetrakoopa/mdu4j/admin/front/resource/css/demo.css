@@ -1,3 +1,8 @@
+ul {
+	-webkit-margin-before: 0em;
+	-webkit-margin-after: 0em;
+}
+
 a {
     color: black;
 }
@@ -23,6 +28,7 @@ table.table>tbody>tr.odd {
     background: black;
     color: white;
     padding: 0.5em;
+    line-height: 1.2em;
 }
 
 img.icon {
@@ -35,9 +41,12 @@ img.icon.off {
     -o-filter:      grayscale(100%);
 }
 
-.title.container .global-info {
+.title.main-container {
+    margin-left: auto;
+    margin-right: auto;
     text-align: right;
 }
+
 
 h1,h2,h3 {
     text-align: center; color: #6a8899; font-family: verdana,arial,sans serif;
@@ -50,12 +59,9 @@ body {
 a:hover {
     color: #C21B17
 }
-.container {
-    background-color: white;
-    border-radius: 2px;
-    padding: 1.2em;
-    margin: 4px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+
+.main-container {
+    margin: 0.3em;
 }
 
 span.quick-action {
@@ -67,7 +73,8 @@ span.quick-action:hover {
     padding: 2px; border : 1px rgba(255,0,0,1) solid; border-radius: 3px
 }
 
-ul.module, ul.choice, ul.action {
+.main-container>ul,.sub-container>ul {
+    list-style-type: none;
     padding : 0px;
 }
 

@@ -1,0 +1,16 @@
+{
+   "cacheAction" : {
+      "status" : {
+         "code" : "OK",
+         "message" : "All is goooood"
+      },
+      "name" : "RESET",
+      "caches" : {
+         "cache" : [ {
+            "name" : "Cachix"
+         }, {
+            "name" : "Cacache-le-cache"
+         } ]
+      }
+   }
+}

@@ -8,7 +8,7 @@ public class ServletInitParameterHelper {
     public static int getIntegerParameter(HttpServlet servlet, String name) {
         final Integer value = getIntegerParameter(servlet, name, null);
         if (value == null) {
-            throw new IllegalArgumentException("No such paramter '"+name+"'");
+            throw new IllegalArgumentException("No such parameter '"+name+"'");
         }
         return value;
     }

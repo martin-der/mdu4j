@@ -1,0 +1,38 @@
+{
+   "cacheAction" : {
+      "status" : {
+         "code" : "OK",
+         "message" : "All is goooood"
+      },
+      "name" : "VIEW",
+      "caches" : {
+         "cache" : [ {
+            "name" : "Cachon",
+            "content" : {
+               "item" : [ {
+                  "key" : "Truc",
+                  "type" : "string",
+                  "value" : "taille=5|tendance=lalala"
+               } ]
+            }
+         }, {
+            "name" : "Cachou-le-cache-casse-cou",
+            "content" : {
+               "item" : [ {
+                  "key" : "Clavier",
+                  "type" : "string",
+                  "value" : "azerty"
+               }, {
+                  "key" : "Nouriture",
+                  "type" : "string",
+                  "value" : "fraise des bois"
+               }, {
+                  "key" : "Nouriture2",
+                  "type" : "string",
+                  "value" : "chocolat"
+               } ]
+            }
+         } ]
+      }
+   }
+}

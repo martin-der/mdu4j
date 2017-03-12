@@ -1,8 +1,7 @@
 package net.tetrakoopa.mdu4j.service.json.bean;
 
 import net.tetrakoopa.mdu4j.service.json.JsonSchemaService;
-
-import net.tetrakoopa.mdu4j.util.xml.adapter.MapAdapter;
+import net.tetrakoopa.mdu4j.util.xml.adapter.AbstractMapAdapter;
 
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -90,11 +89,10 @@ public class JsonObject {
         }
     }
 
-    //@XmlJavaTypeAdapter(InlinedKeyMapAdapter.class)
-    @XmlJavaTypeAdapter(MapAdapter.class)
+    @XmlJavaTypeAdapter(AbstractMapAdapter.class)
     private final Map<String, JsonProperty> properties = new HashMap<String, JsonProperty>();
 
-    @XmlJavaTypeAdapter(MapAdapter.class)
+    @XmlJavaTypeAdapter(AbstractMapAdapter.class)
     private final Map<String, JsonDefinition> definitions = new HashMap<String, JsonDefinition>();
 
 

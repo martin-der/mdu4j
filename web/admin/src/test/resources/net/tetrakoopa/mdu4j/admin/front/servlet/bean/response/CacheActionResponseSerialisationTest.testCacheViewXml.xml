@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:cacheAction xmlns:ns0="http://www.tetrakoopa.net/admin">
+   <status>
+      <code>OK</code>
+      <message>All is goooood</message>
+   </status>
+   <name>VIEW</name>
+   <caches>
+      <cache>
+         <name>Cachon</name>
+         <content>
+            <item key="Truc" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string">taille=5|tendance=lalala</item>
+         </content>
+      </cache>
+      <cache>
+         <name>Cachou-le-cache-casse-cou</name>
+         <content>
+            <item key="Clavier" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string">azerty</item>
+            <item key="Nouriture" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string">fraise des bois</item>
+            <item key="Nouriture2" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string">chocolat</item>
+         </content>
+      </cache>
+   </caches>
+</ns0:cacheAction>

@@ -95,6 +95,9 @@ public class StringUtil {
 	}
 
 	public static String escapeHtml(String string) {
+		return escapeHtml(string, true);
+	}
+	public static String escapeHtml(String string, boolean alsoBR) {
 		final StringBuffer buffer = new StringBuffer(string.length());
 		boolean lastWasBlankChar = false;
 		final int len = string.length();
@@ -129,9 +132,12 @@ public class StringUtil {
 					buffer.append("&lt;");
 				else if (c == '>')
 					buffer.append("&gt;");
-				else if (c == '\n')
-					// Handle Newline
-					buffer.append("&lt;br/&gt;");
+				else if (c == '\n') {
+					if (alsoBR)
+						buffer.append("&lt;br/&gt;");
+					else
+						buffer.append('\n');
+				}
 				else {
 					int ci = 0xffff & c;
 					if (ci < 160 )

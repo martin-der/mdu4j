@@ -3,10 +3,14 @@ package net.tetrakoopa.mdu4j.test;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashSet;
+import java.util.Set;
 
 public class TestResourcesFetcher {
 
 	public static final String DEFAULT_ENCODING = "utf-8";
+
+	private Set<Class<?>> excludedClasses;
 
 	public String resourceNameForMethod() {
 		final String thisClassName = TestResourcesFetcher.class.getName();
@@ -14,7 +18,7 @@ public class TestResourcesFetcher {
 		boolean enteredThisClassOnce = false;
 		for (StackTraceElement element : elements) {
 			final String className = element.getClassName();
-			if (!className.equals(thisClassName)) {
+			if (!className.equals(thisClassName) && !isExcludedClass(className)) {
 				if (enteredThisClassOnce) {
 					return className.replace(".","/")+"."+element.getMethodName();
 				}
@@ -23,6 +27,28 @@ public class TestResourcesFetcher {
 			}
 		}
 		throw new RuntimeException("Could not find out calling method");
+	}
+
+	private boolean isExcludedClass(String className) {
+		if (excludedClasses==null)
+			return false;
+		for (Class<?> clazz : excludedClasses) {
+			if (clazz.getName().equals(className))
+				return true;
+		}
+		return false;
+	}
+
+	public TestResourcesFetcher excludeClass(Class<?> ...classes) {
+		for (Class clazz : classes)
+			getExcludedClasses().add(clazz);
+		return this;
+	}
+	public Set<Class<?>> getExcludedClasses() {
+		if (excludedClasses == null) {
+			excludedClasses = new HashSet<>();
+		}
+		return excludedClasses;
 	}
 
 	public InputStream getResourceForThisMethod(ClassLoader classLoader) {
@@ -40,7 +66,7 @@ public class TestResourcesFetcher {
 			classLoader = TestResourcesFetcher.class.getClassLoader();
 		final InputStream stream = classLoader.getResourceAsStream(resourceName);
 		if (stream == null) {
-			throw new IllegalArgumentException("Resource '"+resourceName+"'not found");
+			throw new IllegalArgumentException("Resource '"+resourceName+"' not found");
 		}
 		return stream;
 	}

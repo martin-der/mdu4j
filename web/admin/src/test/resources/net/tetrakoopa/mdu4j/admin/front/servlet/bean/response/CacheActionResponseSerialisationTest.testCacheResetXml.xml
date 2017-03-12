@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:cacheAction xmlns:ns0="http://www.tetrakoopa.net/admin">
+   <status>
+      <code>OK</code>
+      <message>All is goooood</message>
+   </status>
+   <name>RESET</name>
+   <caches>
+      <cache>
+         <name>Cachix</name>
+      </cache>
+      <cache>
+         <name>Cacache-le-cache</name>
+      </cache>
+   </caches>
+</ns0:cacheAction>

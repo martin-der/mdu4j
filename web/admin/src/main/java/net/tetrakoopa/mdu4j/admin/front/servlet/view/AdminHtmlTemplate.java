@@ -152,7 +152,7 @@ public abstract class AdminHtmlTemplate extends AbstractHtmlTemplate {
     protected final void writeAdminHeader(PrintWriter writer) {
         final String staticResources = servlet.getResourcesPath();
 
-        writer.println("<center><table class=\"title main-container\">");
+        writer.println("<header><table class=\"title header main-container\">");
         writer.println("<tr>");
         writer.println("<td>");
         writer.println("<img src=\""+staticResources+"/image/structure-page/logo-50px.png"+"\" />");
@@ -179,7 +179,7 @@ public abstract class AdminHtmlTemplate extends AbstractHtmlTemplate {
         writer.println("<img src=\""+staticResources+"/image/structure-page/logo-50px.png"+"\" />");
         writer.println("</td>");
         writer.println("</tr>");
-        writer.println("</table></center>");
+        writer.println("</table></header>");
 
     }
 

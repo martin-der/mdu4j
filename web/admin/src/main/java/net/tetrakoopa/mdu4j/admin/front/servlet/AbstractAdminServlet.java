@@ -4,7 +4,6 @@ import net.tetrakoopa.mdu4j.admin.front.servlet.view.configuration.AdminServletT
 import net.tetrakoopa.mdu4j.admin.service.AdminUtilService;
 import net.tetrakoopa.mdu4j.front.servlet.view.HTMLRenderHelper;
 import net.tetrakoopa.mdu4j.front.view.configuration.TemplateConfiguration;
-import net.tetrakoopa.mdu4j.front.view.configuration.AbstractTemplateConfigurationFactory;
 import net.tetrakoopa.mdu4j.message.MessageService;
 import net.tetrakoopa.mdu4j.service.LocalRequest;
 import net.tetrakoopa.mdu4j.service.LocalSession;
@@ -90,8 +89,8 @@ public abstract class AbstractAdminServlet extends HttpServlet {
     /** null if never hidden, false if hidden at start only, true if always hidden */
     private Boolean alwaysHidden;
 
-    protected final static String EXTRA_PATH_RESOURCES_PREFIX = "/static";
-    protected final static String CLASSPATH_RESOURCES_PREFIX = "net/tetrakoopa/mdu4j/admin/front/resource";
+    private final static String EXTRA_PATH_RESOURCES_PREFIX = "/static";
+    private final static String CLASSPATH_RESOURCES_PREFIX = "net/tetrakoopa/mdu4j/admin/front/resource";
 
     private String staticResourcesBase;
     private String staticResourcesFolder;
@@ -246,7 +245,7 @@ public abstract class AbstractAdminServlet extends HttpServlet {
             adminDoGet(request, responseWrapper);
             //int size = responseWrapper.getBufferSize();
             //responseWrapper.setContentLength(size);
-        } catch (RuntimeException exception) {
+        } catch (Exception exception) {
             renderFailure(request, response, null, message("${error.unexpected.title}"), exception, 200);
         }
 
@@ -316,7 +315,7 @@ public abstract class AbstractAdminServlet extends HttpServlet {
                     if (message==null) {
                         allMessage = StringUtil.escapeXml(ExceptionUtil.getStacktrace(exception));
                     } else {
-                        allMessage = message + "\n" + StringUtil.escapeXml(ExceptionUtil.getStacktrace(exception));
+                        allMessage = message + "\n" + StringUtil.escapeHtml(ExceptionUtil.getStacktrace(exception), false);
                     }
                 }
                 final ActionResponse responseBean = new GenericFailureActionResponse(escape(allMessage));
@@ -338,7 +337,7 @@ public abstract class AbstractAdminServlet extends HttpServlet {
                 @Override
                 public void render(PrintWriter writer, HttpServletRequest request, HttpServletResponse response) throws IOException {
                     writer.print("<h1>");
-                    writer.print(escape(message("${domain.error}")));
+                    writer.print(escape(message("${domain.error}"), false));
                     writer.println("</h1>");
 
                     if (message != null) {
@@ -527,12 +526,7 @@ public abstract class AbstractAdminServlet extends HttpServlet {
         if (string==null) {
             return null;
         }
-        final String escaped = StringUtil.escapeHtml(string);
-        if (alsoCr) {
-            return escaped.replace("\n", "<br/>");
-        } else {
-            return escaped;
-        }
+        return StringUtil.escapeHtml(string, alsoCr);
     }
 
     protected void printTechnicalInfo(PrintWriter writer, HttpServletRequest request, HttpServletResponse response, AbstractHtmlTemplate.Renderer renderer) throws IOException {

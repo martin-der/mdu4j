@@ -15,7 +15,7 @@ import javax.xml.bind.JAXBException;
 
 public abstract class AbstractSerialisationTest {
 
-	private final static TestResourcesFetcher testResourcesFetcher = new TestResourcesFetcher();
+	private final static TestResourcesFetcher testResourcesFetcher = new TestResourcesFetcher().excludeClass(AbstractSerialisationTest.class);
 
     protected String loadXmlResourceForThisMethod() {
         return loadStringResourceForThisMethod("xml");

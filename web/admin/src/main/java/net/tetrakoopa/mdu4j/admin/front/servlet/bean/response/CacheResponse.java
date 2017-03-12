@@ -1,6 +1,6 @@
 package net.tetrakoopa.mdu4j.admin.front.servlet.bean.response;
 
-import net.tetrakoopa.mdu4j.util.xml.adapter.MapAdapter;
+import net.tetrakoopa.mdu4j.util.xml.adapter.StringObjectMapAdapter;
 
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -19,7 +19,7 @@ public class CacheResponse {
 
     private String name;
 
-    @XmlJavaTypeAdapter(MapAdapter.class)
+    @XmlJavaTypeAdapter(StringObjectMapAdapter.class)
     private Map<String, Object> content;
 
     public Map<String, Object> getContent() {

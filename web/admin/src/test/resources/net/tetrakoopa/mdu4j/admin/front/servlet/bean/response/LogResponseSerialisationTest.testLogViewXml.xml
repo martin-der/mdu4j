@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:logAction xmlns:ns0="http://www.tetrakoopa.net/admin">
+   <status>
+      <code>OK</code>
+      <message>All is goooood</message>
+   </status>
+   <name>VIEW</name>
+   <logs>
+      <log>
+         <rolledInstance>false</rolledInstance>
+         <content>qdqsdqs</content>
+      </log>
+   </logs>
+</ns0:logAction>
