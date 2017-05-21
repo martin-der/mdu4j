@@ -1,4 +1,6 @@
 
+task wrapper(type: Wrapper) { gradleVersion = '3.4.1' }
+
 buildscript {
     repositories {
         mavenCentral()
@@ -12,7 +14,6 @@ subprojects {
 	}
 }
 
-task wrapper(type: Wrapper) { gradleVersion = '2.14' }
 
 allprojects {
 
