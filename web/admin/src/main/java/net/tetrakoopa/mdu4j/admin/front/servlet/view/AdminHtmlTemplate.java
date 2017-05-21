@@ -70,7 +70,7 @@ public abstract class AdminHtmlTemplate extends AbstractHtmlTemplate {
         writer.println("</tr>");
         
         writer.println("<tr>");
-        writer.println("<td class=\"menu\"><div class=\"main-container\">");
+        writer.println("<td class=\"menu\"><div class=\"main-container not-for-hand-held\">");
 
         writeServletsList(writer);
 

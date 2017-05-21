@@ -204,13 +204,14 @@ public class LogServlet extends AbstractActionAdminServlet<LogAction, LogUserPar
 
                     final String rowCssClass = oddRow?"odd":"even";
 
-                    writer.println("<tr class='"+rowCssClass+"'>");
+                    writer.println("<tr class='"+rowCssClass+"");
+                    if (log.isRolledInstance()) {
+                        writer.println(" rolled-log");
+                    }
+                    writer.println("'>");
 
                     writer.println("<td colspan=\"2\">");
                     writer.println("<span title=\"From:"+log.getRetrievalMethod()+"\"");
-                    if (log.isRolledInstance()) {
-                        writer.println(" class=\"rolled-log\"");
-                    }
                     writer.println(" >");
                     final String logName = log.getName();
                     writer.println((logName == null || logName.trim().equals("")) ? ("unnamed-"+(unnamedIndex++)) : escape(logName));

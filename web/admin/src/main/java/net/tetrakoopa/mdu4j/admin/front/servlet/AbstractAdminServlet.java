@@ -2,6 +2,7 @@ package net.tetrakoopa.mdu4j.admin.front.servlet;
 
 import net.tetrakoopa.mdu4j.admin.front.servlet.view.configuration.AdminServletTemplateConfigurationFactory;
 import net.tetrakoopa.mdu4j.admin.service.AdminUtilService;
+import net.tetrakoopa.mdu4j.front.servlet.AbstractServlet;
 import net.tetrakoopa.mdu4j.front.servlet.view.HTMLRenderHelper;
 import net.tetrakoopa.mdu4j.front.view.configuration.TemplateConfiguration;
 import net.tetrakoopa.mdu4j.message.MessageService;
@@ -56,8 +57,8 @@ import java.util.List;
  * The following servlet parameters are available :
  * <ul>
  * <li>static-resources-path : permet de surcherger l'URL ( ou le contexte ) dans lequel se trouvent les ressources statiques</li>
- * <li>static-resources-classpath-folder : répoertoire dans lequel chezcher les ressources</li>
- * <li>extra-applicationContext : permet de ajouter un ou plusieurs configuration Spring dans lesquels sont déclarés les 'Handlers'</li>
+ * <li>static-resources-classpath-folder : répertoire dans lequel chercher les ressources</li>
+ * <li>extra-applicationContext : permet d'ajouter un ou plusieurs configuration Spring dans lesquels sont déclarés les 'Handlers'</li>
  * <li>menu.order : position dans le menu</li>
  * </ul>
  * 
@@ -65,7 +66,7 @@ import java.util.List;
  * This class can do Spring injection using annotation. After the call of <code>adminInit</code> all service are created and injected.<br/>
  * <br/>
  */
-public abstract class AbstractAdminServlet extends HttpServlet {
+public abstract class AbstractAdminServlet extends AbstractServlet {
 
     private static final long serialVersionUID = -3069389309195935223L;
 
@@ -176,7 +177,7 @@ public abstract class AbstractAdminServlet extends HttpServlet {
 				autowiredAnnotationBeanPostProcessor.processInjection(messageService);
 				this.messageService = messageService;
 			} catch (Exception exception) {
-				LOGGER.warn("Failed to load some message propeties : " + exception.getMessage(), exception);
+				LOGGER.warn("Failed to load some message properties : " + exception.getMessage(), exception);
 			}
 		}
 		htmlElementRenderService.setMessageService(this.messageService);
@@ -379,7 +380,7 @@ public abstract class AbstractAdminServlet extends HttpServlet {
                                 writer.println("<span class='technical-code' />");
                                 writer.print(escape(message("${domain.technical-information}")));
                                 writer.println(" :<br/>");
-                                writer.println("<span class='code'><pre>" + escape(ExceptionUtil.getStacktrace(exception), true) + "<pre></span>");
+                                writer.println("<span class='code'><pre>" + escape(ExceptionUtil.getStacktrace(exception), false) + "<pre></span>");
                                 writer.println("</span");
                             }
                         } );
@@ -389,7 +390,7 @@ public abstract class AbstractAdminServlet extends HttpServlet {
                         try {
                             customRenderer.render(writer, request, response);
                         } catch(RuntimeException rex) {
-                            // Fuck ! seroously ?
+                            // Fuck ! seriously ?
                             LOGGER.error("Oops, while render error : "+rex.getMessage(), rex);
                         }
                     }
@@ -511,22 +512,6 @@ public abstract class AbstractAdminServlet extends HttpServlet {
     }
     public void includeCSSFromResources(PrintWriter writer, String css) {
 		HTMLRenderHelper.renderIncludeCSS(writer, getResourcesPath()+"/css/"+css);
-    }
-
-    // TODO à mettre ailleurs... mais où
-    protected final String escape(String string) {
-        return escape(string, false);        
-    }
-    // TODO à mettre ailleurs... mais où
-    /**
-     * @param alsoCr si <code>true</code> les retour chariot sont aussi convertis en leur equilvalent HTML 
-     * @return <ul><li>null si l'entrée est null</li><li>la chaine échappé en HTML ( à minima &amp;, &gt; et &lt; )</li></ul>
-     */
-    protected final String escape(String string, boolean alsoCr) {
-        if (string==null) {
-            return null;
-        }
-        return StringUtil.escapeHtml(string, alsoCr);
     }
 
     protected void printTechnicalInfo(PrintWriter writer, HttpServletRequest request, HttpServletResponse response, AbstractHtmlTemplate.Renderer renderer) throws IOException {

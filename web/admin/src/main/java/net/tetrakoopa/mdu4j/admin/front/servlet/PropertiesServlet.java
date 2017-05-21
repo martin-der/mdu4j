@@ -64,11 +64,11 @@ public class PropertiesServlet extends AbstractActionAdminServlet<PropertiesActi
 
                 for (Resource resource : resolver.getResources("classpath*:"+ propertiesRootClasspath+"/**/*.properties")) {
                     final PropertiesReference propertiesReference = new PropertiesReference();
-                    //try {
-                    //    propertiesReference.setClasspathResourceReference(resource.getURI().toString());
-                    //} catch (Exception ex) {
+                    try {
+                        propertiesReference.setClasspathResourceReference(resource.getURI().toString());
+                    } catch (Exception ex) {
                         propertiesReference.setFileSystemReference(resource.getFile().getAbsolutePath());
-                    //}
+                    }
                     propertiesResources.add(propertiesReference);
                 }
             }
