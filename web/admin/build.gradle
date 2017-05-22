@@ -3,7 +3,7 @@
 apply plugin: 'java'
 
 dependencies {
-	compile project(':test')
+	testCompile project(':test')
 	compile project(':util')
 	compile project(':domain')
 	compile project(':web/core')
