@@ -4,6 +4,7 @@ apply plugin: 'java'
 
 dependencies {
 	testCompile project(':test')
+	testCompile project(':util-test')
 	compile project(':util')
 	compile project(':domain')
 	compile project(':web/core')

@@ -1,6 +1,7 @@
 package net.tetrakoopa.mdu4j.util.test;
 
 import net.tetrakoopa.mdu4j.service.SerialisationService;
+import net.tetrakoopa.mdu4j.test.AbstractSerialisationTest;
 import net.tetrakoopa.mdu4j.test.TestResourcesFetcher;
 import net.tetrakoopa.mdu4j.util.IOUtil;
 
@@ -13,7 +14,7 @@ import java.util.Scanner;
 
 import javax.xml.bind.JAXBException;
 
-public abstract class AbstractSerialisationTest extends net.tetrakoopa.mdu4j.test.AbstractSerialisationTest {
+public abstract class AbstractSerialisationHelperTest extends AbstractSerialisationTest {
 
     protected String serializeXml(Object object) {
         final StringWriter stringWriter = new StringWriter();

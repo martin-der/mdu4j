@@ -4,7 +4,7 @@ import net.tetrakoopa.mdu4j.admin.front.servlet.bean.cache.CacheAction;
 import net.tetrakoopa.mdu4j.admin.front.servlet.bean.response.CacheActionResponse;
 import net.tetrakoopa.mdu4j.admin.front.servlet.bean.response.CacheResponse;
 import net.tetrakoopa.mdu4j.front.servlet.bean.response.ActionResponse;
-import net.tetrakoopa.mdu4j.util.test.AbstractSerialisationTest;
+import net.tetrakoopa.mdu4j.util.test.AbstractSerialisationHelperTest;
 
 import org.junit.Test;
 import org.springframework.util.ReflectionUtils;
@@ -16,7 +16,7 @@ import java.util.Map;
 
 import static org.junit.Assert.*;
 
-public class CacheActionResponseSerialisationTest extends AbstractSerialisationTest {
+public class CacheActionResponseSerialisationTest extends AbstractSerialisationHelperTest {
 
     public static class TrucDeCache {
 

@@ -22,10 +22,8 @@ allprojects {
     apply plugin: 'java'
 
     tasks.withType(JavaCompile) {
-		sourceCompatibility = '1.8'
-		targetCompatibility = '1.8'
-        //sourceCompatibility = "${sourceCompatibility}"
-        //targetCompatibility = "${targetCompatibility}"
+        sourceCompatibility = "${sourceCompatibility}"
+        targetCompatibility = "${targetCompatibility}"
     }
 
 	repositories {
