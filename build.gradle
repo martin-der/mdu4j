@@ -1,12 +1,12 @@
 
 task wrapper(type: Wrapper) { gradleVersion = '3.4.1' }
 
-buildscript {
-    repositories {
-        mavenCentral()
-		jcenter()
-    }
-}
+//buildscript {
+//    repositories {
+//        mavenCentral()
+//		jcenter()
+//    }
+//}
 
 subprojects {
 	tasks.withType(Jar) {
