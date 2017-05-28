@@ -1,15 +1,15 @@
 
 
 apply plugin: 'war'
-apply plugin: 'jetty'
+apply plugin: 'org.akhikhl.gretty'
 
 dependencies {
 	compile project(':web/admin')
 	compileOnly "javax.servlet:servlet-api:${property('version.servlet-api')}"
 }
 
-jettyRun {
+gretty {
 	httpPort = 50080
-	contextPath = '/'
+	contextPath = '/admin-demo'
 }
 

@@ -17,8 +17,18 @@ subprojects {
 
 allprojects {
 
+	buildscript {
+		repositories {
+			jcenter()
+		}
 
-    apply plugin: 'maven'
+		dependencies {
+			classpath 'org.akhikhl.gretty:gretty:+'
+		}
+	}
+
+
+	apply plugin: 'maven'
     apply plugin: 'java'
 
     tasks.withType(JavaCompile) {
