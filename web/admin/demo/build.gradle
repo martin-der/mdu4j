@@ -11,5 +11,6 @@ dependencies {
 gretty {
 	httpPort = 50080
 	contextPath = '/admin-demo'
+	systemProperty 'org.eclipse.jetty.annotations.maxWait', "${property('gretty.scan.maxWait')}"
 }
 
