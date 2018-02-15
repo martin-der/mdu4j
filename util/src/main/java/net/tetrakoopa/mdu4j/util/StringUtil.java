@@ -188,14 +188,14 @@ public class StringUtil {
 		return upper ? separated.toUpperCase() : separated.toLowerCase();
 	}
 
-	public static String concatToString(Object objects[], ToStringable<Object> convertor, String separator) {
+	public static <E> String concatToString(E objects[], ToStringable<E> convertor, String separator) {
 		final StringBuffer buffer = new StringBuffer();
 		concatIntoBuffer(buffer, objects, convertor, separator);
 		return buffer.toString();
 	}
-	public static void concatIntoBuffer(StringBuffer buffer, Object objects[], ToStringable<Object> convertor, String separator) {
+	public static <E> void concatIntoBuffer(StringBuffer buffer, E objects[], ToStringable<E> convertor, String separator) {
 		boolean first = true;
-		for (Object object : objects) {
+		for (E object : objects) {
 			if (first) {
 				first = false;
 			} else {
