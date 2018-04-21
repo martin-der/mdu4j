@@ -28,7 +28,7 @@ public class AbstractBuilderTest {
 	}
 	public static class Vehicle {
 
-		@UIAttribute.Label("identifiant")
+		@UI.Label("identifiant")
 		private String id;
 
 		protected final Engine engines[];

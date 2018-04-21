@@ -12,7 +12,7 @@ import net.tetrakoopa.mdu4j.admin.front.servlet.bean.cache.CacheRequestParameter
 import net.tetrakoopa.mdu4j.admin.front.servlet.bean.cache.CacheUserParameter;
 import net.tetrakoopa.mdu4j.admin.front.servlet.view.CacheHtmlTemplate;
 import net.tetrakoopa.mdu4j.util.StringUtil;
-import net.tetrakoopa.mdu4j.view.UIAttribute;
+import net.tetrakoopa.mdu4j.view.UI;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.Cache;
@@ -26,7 +26,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.*;
 
-@UIAttribute.Glyph(HTMLRenderHelper.Glyph.FONT_STYLE_PREFIX +"microchip")
+@UI.Glyph(HTMLRenderHelper.Glyph.FONT_STYLE_PREFIX +"microchip")
 public class CacheServlet extends AbstractActionAdminServlet<CacheAction, CacheUserParameter> implements CacheRequestParameter {
     
     private static final long serialVersionUID = -644755913609083952L;

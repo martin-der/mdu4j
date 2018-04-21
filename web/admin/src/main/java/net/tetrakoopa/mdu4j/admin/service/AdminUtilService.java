@@ -2,7 +2,7 @@ package net.tetrakoopa.mdu4j.admin.service;
 
 import net.tetrakoopa.mdu4j.admin.front.servlet.AbstractAdminServlet;
 import net.tetrakoopa.mdu4j.front.servlet.helper.ServletInitParameterHelper;
-import net.tetrakoopa.mdu4j.view.UIAttribute;
+import net.tetrakoopa.mdu4j.view.UI;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -51,13 +51,13 @@ public class AdminUtilService {
             if (orderFromInit1 != null) {
                 order1 = orderFromInit1;
             } else {
-                final UIAttribute.Order orderAnnotation1 = servlet1.getClass().getAnnotation(UIAttribute.Order.class);
+                final UI.Order orderAnnotation1 = servlet1.getClass().getAnnotation(UI.Order.class);
                 order1 =  orderAnnotation1 == null ? Integer.MAX_VALUE : orderAnnotation1.value();
             }
             if (orderFromInit2 != null) {
                 order2 = orderFromInit2;
             } else {
-                final UIAttribute.Order orderAnnotation2 = servlet1.getClass().getAnnotation(UIAttribute.Order.class);
+                final UI.Order orderAnnotation2 = servlet1.getClass().getAnnotation(UI.Order.class);
                 order2 = orderAnnotation2 == null ? Integer.MAX_VALUE : orderAnnotation2.value();
             }
             if (order1 > order2) return 1;

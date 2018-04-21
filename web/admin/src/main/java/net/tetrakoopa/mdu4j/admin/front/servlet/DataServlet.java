@@ -11,7 +11,7 @@ import net.tetrakoopa.mdu4j.front.servlet.parameter.ParameterParser;
 import net.tetrakoopa.mdu4j.admin.front.servlet.view.DataHtmlTemplate;
 import net.tetrakoopa.mdu4j.front.servlet.view.HTMLRenderHelper;
 import net.tetrakoopa.mdu4j.front.view.AbstractHtmlTemplate;
-import net.tetrakoopa.mdu4j.view.UIAttribute;
+import net.tetrakoopa.mdu4j.view.UI;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,7 +30,7 @@ import java.util.regex.PatternSyntaxException;
 /**
  * Servlet permettant d'afficher des données arbitraires
  */
-@UIAttribute.Glyph(HTMLRenderHelper.Glyph.FONT_STYLE_PREFIX +"database")
+@UI.Glyph(HTMLRenderHelper.Glyph.FONT_STYLE_PREFIX +"database")
 public class DataServlet extends AbstractActionAdminServlet<DataAction, DataUserParameter> implements DataRequestParameter {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(DataServlet.class);

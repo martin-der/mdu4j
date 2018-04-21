@@ -24,7 +24,7 @@ import net.tetrakoopa.mdu4j.front.view.AbstractHtmlTemplate;
 import net.tetrakoopa.mdu4j.service.SerialisationService;
 import net.tetrakoopa.mdu4j.util.ExceptionUtil;
 import net.tetrakoopa.mdu4j.util.StringUtil;
-import net.tetrakoopa.mdu4j.view.UIAttribute;
+import net.tetrakoopa.mdu4j.view.UI;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,7 +37,6 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServletResponseWrapper;
@@ -182,7 +181,7 @@ public abstract class AbstractAdminServlet extends AbstractServlet {
 		}
 		htmlElementRenderService.setMessageService(this.messageService);
 
-		final UIAttribute.Glyph glyphAttribute = getAnnotation(UIAttribute.Glyph.class);
+		final UI.Glyph glyphAttribute = getAnnotation(UI.Glyph.class);
 		this.glyph = glyphAttribute == null ? null : glyphAttribute.value();
 		final Hidden hiddenAttribute = getAnnotation(Hidden.class);
 		if (hiddenAttribute != null) {

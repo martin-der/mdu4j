@@ -13,7 +13,7 @@ import net.tetrakoopa.mdu4j.front.servlet.parameter.ParameterParser;
 import net.tetrakoopa.mdu4j.front.servlet.view.HTMLRenderHelper;
 import net.tetrakoopa.mdu4j.admin.front.servlet.view.PropertiesHtmlTemplate;
 import net.tetrakoopa.mdu4j.front.view.AbstractHtmlTemplate;
-import net.tetrakoopa.mdu4j.view.UIAttribute;
+import net.tetrakoopa.mdu4j.view.UI;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,7 +33,7 @@ import java.util.Properties;
 /**
  * Servlet permettant d'afficher des fichiers properties
  */
-@UIAttribute.Glyph(HTMLRenderHelper.Glyph.FONT_STYLE_PREFIX +"columns")
+@UI.Glyph(HTMLRenderHelper.Glyph.FONT_STYLE_PREFIX +"columns")
 public class PropertiesServlet extends AbstractActionAdminServlet<PropertiesAction, PropertiesUserParameter> implements PropertiesRequestParameter {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(PropertiesServlet.class);

@@ -10,7 +10,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public abstract class AbstractBuilder<CONTEXT> implements UIAttribute {
+public abstract class AbstractBuilder<CONTEXT> implements UI {
 	
 	/** Type de donnée => influe sur le Contrôle généré */
 	public enum Type {

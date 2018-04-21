@@ -13,7 +13,7 @@ import net.tetrakoopa.mdu4j.front.view.AbstractHtmlTemplate;
 import net.tetrakoopa.mdu4j.logger.bean.Logger;
 import net.tetrakoopa.mdu4j.util.FormatterUtil;
 import net.tetrakoopa.mdu4j.util.IOUtil;
-import net.tetrakoopa.mdu4j.view.UIAttribute;
+import net.tetrakoopa.mdu4j.view.UI;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -35,7 +35,7 @@ import java.util.Scanner;
  *     </li>
  * </ul>
  */
-@UIAttribute.Glyph(HTMLRenderHelper.Glyph.FONT_STYLE_PREFIX +"newspaper-o")
+@UI.Glyph(HTMLRenderHelper.Glyph.FONT_STYLE_PREFIX +"newspaper-o")
 public class LogServlet extends AbstractActionAdminServlet<LogAction, LogUserParameter> implements LogRequestParameter {
 
     @Autowired
