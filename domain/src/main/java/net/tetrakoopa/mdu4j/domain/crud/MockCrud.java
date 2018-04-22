@@ -1,4 +1,4 @@
-package net.tetrakoopa.mdu4j.service.crud;
+package net.tetrakoopa.mdu4j.domain.crud;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -13,9 +13,9 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.tetrakoopa.mdu4j.service.crud.exception.CrudException;
-import net.tetrakoopa.mdu4j.service.crud.exception.ElementAlreadyExistsException;
-import net.tetrakoopa.mdu4j.service.crud.exception.NoSuchElementException;
+import net.tetrakoopa.mdu4j.domain.crud.exception.CrudException;
+import net.tetrakoopa.mdu4j.domain.crud.exception.ElementAlreadyExistsException;
+import net.tetrakoopa.mdu4j.domain.crud.exception.NoSuchElementException;
 import net.tetrakoopa.mdu4j.util.IOUtil;
 import net.tetrakoopa.mdu4j.util.MarshalingUtil;
 import net.tetrakoopa.mdu4j.util.ReflectionUtil;

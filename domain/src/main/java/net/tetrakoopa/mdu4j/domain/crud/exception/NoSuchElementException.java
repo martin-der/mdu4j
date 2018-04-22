@@ -1,4 +1,4 @@
-package net.tetrakoopa.mdu4j.service.crud.exception;
+package net.tetrakoopa.mdu4j.domain.crud.exception;
 
 /**
  * Thrown when an element could not be found, either because there no element

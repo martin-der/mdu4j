@@ -10,6 +10,8 @@ public class Foobar {
 
 	private boolean ready;
 
+	private CaptainRecursive captainRecursive;
+
 	public boolean isReady() {
 		return ready;
 	}
@@ -40,5 +42,13 @@ public class Foobar {
 
 	public void setSize(long size) {
 		this.size = size;
+	}
+
+	public CaptainRecursive getCaptainRecursive() {
+		return captainRecursive;
+	}
+
+	public void setCaptainRecursive(CaptainRecursive captainRecursive) {
+		this.captainRecursive = captainRecursive;
 	}
 }

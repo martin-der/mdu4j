@@ -13,4 +13,5 @@ dependencies {
 	compileOnly "javax.servlet:servlet-api:${property('version.servlet-api')}"
 	compile "ch.qos.logback:logback-classic:${property('version.logback')}"
 	compile "org.eclipse.persistence:org.eclipse.persistence.moxy:${property('version.eclipse-moxy')}"
+	compile "net.sf.ehcache:ehcache:${property('version.ehcache')}"
 }

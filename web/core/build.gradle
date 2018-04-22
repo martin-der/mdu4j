@@ -13,14 +13,13 @@ dependencies {
 	compile "com.google.code.gson:gson:${property('version.google.gson')}"
 	compile "org.springframework:spring-context:${property('version.spring')}"
 	compile "org.springframework:spring-context-support:${property('version.spring')}"
-	compile "org.springframework:spring-dao:2.0.8"
-	compile "org.springframework:spring-jdbc:${property('version.spring')}"
+	//compile "org.springframework:spring-dao:2.0.8"
+	//compile "org.springframework:spring-jdbc:${property('version.spring')}"
 	compile "org.springframework:spring-web:${property('version.spring')}"
 	compile "org.springframework.security:spring-security-core:${property('version.spring')}"
 	//compile "org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1"
-	compile "org.hibernate.java-persistence:jpa-api:${property('version.hibernate-jpa-api')}"
+	//compile "org.hibernate.java-persistence:jpa-api:${property('version.hibernate-jpa-api')}"
 	compileOnly "javax.servlet:servlet-api:${property('version.servlet-api')}"
-	compile "net.sf.ehcache:ehcache:${property('version.ehcache')}"
 	compile "javax.mail:mail:1.5.0-b01"
 
 }

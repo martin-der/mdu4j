@@ -1,33 +1,33 @@
-package net.tetrakoopa.mdu4j.service.crud;
+package net.tetrakoopa.mdu4j.domain.crud;
 
 import java.io.Serializable;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.List;
-
-import javax.sql.DataSource;
-
-import net.tetrakoopa.mdu4j.service.crud.exception.CrudException;
-import net.tetrakoopa.mdu4j.service.crud.exception.InstantiationException;
-import net.tetrakoopa.mdu4j.service.crud.exception.NoSuchElementException;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
+//import java.sql.Connection;
+//import java.sql.PreparedStatement;
+//import java.sql.SQLException;
+//import java.sql.Statement;
+//import java.util.List;
+//
+//import javax.sql.DataSource;
+//
+//import net.tetrakoopa.mdu4j.service.crud.exception.CrudException;
+//import net.tetrakoopa.mdu4j.service.crud.exception.InstantiationException;
+//import net.tetrakoopa.mdu4j.service.crud.exception.NoSuchElementException;
+//
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.PreparedStatementCreator;
-import org.springframework.jdbc.core.SingleColumnRowMapper;
-import org.springframework.jdbc.support.GeneratedKeyHolder;
-import org.springframework.jdbc.support.KeyHolder;
+//import org.springframework.jdbc.core.JdbcTemplate;
+//import org.springframework.jdbc.core.PreparedStatementCreator;
+//import org.springframework.jdbc.core.SingleColumnRowMapper;
+//import org.springframework.jdbc.support.GeneratedKeyHolder;
+//import org.springframework.jdbc.support.KeyHolder;
 
 public abstract class AbstractJDBCSupportCrud<ID extends Serializable, MDL> extends AbstractCrud<ID, MDL> implements Crud<ID, MDL>, ApplicationContextAware {
 
-    private JdbcTemplate jdbcTemplate;
-    
+    /*private JdbcTemplate jdbcTemplate;
+
     private String modelName;
-    
+
     private SingleColumnRowMapper<MDL> rowMapper;
     private PojoMapper<MDL> pojoMapper;
     private String tableName;
@@ -45,13 +45,13 @@ public abstract class AbstractJDBCSupportCrud<ID extends Serializable, MDL> exte
 
     public interface PojoMapper<T> {
     	Object mapPojo (T pojo, String name);
-    }
+    }*/
 
 	public AbstractJDBCSupportCrud(Class<MDL> modelClass) {
 		super(modelClass);
 	}
 
-	@Override
+	/*@Override
 	public void setApplicationContext(ApplicationContext context) {
 		try {
 
@@ -101,10 +101,10 @@ public abstract class AbstractJDBCSupportCrud<ID extends Serializable, MDL> exte
 	protected abstract String createIDName();
 	protected abstract String [] createRowNames();
 
-	/**
+	*//**
 	 * findOut what is the name of the table <br/>
 	 * default : use the <i>simple name</i> of the model class
-	 */
+	 *//*
 	protected String createTableName() {
 		return getModelClass().getSimpleName();
 	}
@@ -214,7 +214,7 @@ public abstract class AbstractJDBCSupportCrud<ID extends Serializable, MDL> exte
 			result.append(name);
 		}
 		return result.toString();
-	}
+	}*/
 
 
 }

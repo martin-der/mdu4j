@@ -5,16 +5,15 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.List;
 
-import net.tetrakoopa.mdu4j.service.crud.MockCrud;
-import net.tetrakoopa.mdu4j.service.crud.MockCrud.Service.PersistenceType;
-import net.tetrakoopa.mdu4j.service.crud.MockCrud.Service.PopulationStategy;
-import net.tetrakoopa.mdu4j.service.crud.exception.CrudException;
+import net.tetrakoopa.mdu4j.domain.crud.MockCrud;
+import net.tetrakoopa.mdu4j.domain.crud.MockCrud.Service.PersistenceType;
+import net.tetrakoopa.mdu4j.domain.crud.MockCrud.Service.PopulationStategy;
+import net.tetrakoopa.mdu4j.domain.crud.exception.CrudException;
 import net.tetrakoopa.mdu4j.test.things.Truc;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-
+import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 public class MockCRUDServiceTest {
 
@@ -23,7 +22,7 @@ public class MockCRUDServiceTest {
 	MoooockAlwaysPopulate REPO_ALWAYS_POPULATE;
 	MoooockNeverPopulate REPO_NEVER_POPULATE;
 
-	@Before
+	@BeforeTest
 	public void init() {
 
 		REPO_ALWAYS_POPULATE = new MoooockAlwaysPopulate();

@@ -13,7 +13,7 @@ public class SerialisationService {
 
     public static Pattern XML_PROLOG = Pattern.compile("^<\\?xml (.*)\\?>(.*)", Pattern.DOTALL);
 
-    private static String org_eclipse_persistence_jaxb_MarshallerProperties_MEDIA_TYPE = null;
+    private static String org_eclipse_persistence_jaxb_MarshallerProperties_MEDIA_TYPE = "eclipselink.media-type";
     private static String org_eclipse_persistence_jaxb_MarshallerProperties_JSON_INCLUDE_ROOT = null;
 
     public String generateXml(Object rootElement) throws Exception {
@@ -57,8 +57,8 @@ public class SerialisationService {
 
         getEclipseMarshallerProperties();
 
-        marshaller.setProperty(org_eclipse_persistence_jaxb_MarshallerProperties_MEDIA_TYPE, "application/json");
-        marshaller.setProperty(org_eclipse_persistence_jaxb_MarshallerProperties_JSON_INCLUDE_ROOT, true);
+        //marshaller.setProperty(org_eclipse_persistence_jaxb_MarshallerProperties_MEDIA_TYPE, "application/json");
+        //marshaller.setProperty(org_eclipse_persistence_jaxb_MarshallerProperties_JSON_INCLUDE_ROOT, "eclipselink.json.include-root");
 
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, format);
         marshaller.marshal(rootElement, writer);

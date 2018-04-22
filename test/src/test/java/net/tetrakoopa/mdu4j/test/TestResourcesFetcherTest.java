@@ -1,8 +1,8 @@
 package net.tetrakoopa.mdu4j.test;
 
-import junit.framework.Assert;
 
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -16,7 +16,7 @@ public class TestResourcesFetcherTest {
 		Assert.assertEquals("That's exactly what I needed.", text);
 	}
 
-	@Test(expected = IllegalArgumentException.class)
+	@Test(expectedExceptions = IllegalArgumentException.class)
 	public void cannotGetResource() throws IOException {
 		new TestResourcesFetcher().getTextForThisMethod("txt");
 	}

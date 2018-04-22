@@ -4,7 +4,7 @@ import java.io.File;
 
 import net.tetrakoopa.mdu4j.util.log.AbstractLogReaderService;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 public class AbstractLogReaderServiceTest {
 

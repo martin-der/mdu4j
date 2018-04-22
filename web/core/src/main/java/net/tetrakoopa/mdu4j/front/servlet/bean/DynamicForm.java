@@ -1,6 +1,6 @@
 package net.tetrakoopa.mdu4j.front.servlet.bean;
 
-import net.tetrakoopa.mdu4j.view.UIAttribute;
+import net.tetrakoopa.mdu4j.view.UI;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class DynamicForm {
 
-    public interface Attribute extends UIAttribute {
+    public interface Attribute extends UI {
         @Retention(RetentionPolicy.RUNTIME)
         @Target(ElementType.FIELD)
         @interface Excluded {

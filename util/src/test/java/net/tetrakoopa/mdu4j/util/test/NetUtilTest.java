@@ -2,11 +2,11 @@ package net.tetrakoopa.mdu4j.util.test;
 
 import java.text.ParseException;
 
-import junit.framework.Assert;
 import net.tetrakoopa.mdu4j.util.NetUtil;
 
-import org.junit.Ignore;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
 
 public class NetUtilTest {
 
@@ -29,8 +29,7 @@ public class NetUtilTest {
 
 	}
 
-	@Test
-	@Ignore
+	//@Test
 	public void testConvert6to4() throws ParseException {
 		
 		byte[] ipv6 = NetUtil.parseIPv6("00:00:00:00:00:00:00:00:00:00:FF:FF:7F:00:00:01");
@@ -41,7 +40,7 @@ public class NetUtilTest {
 
 	}
 
-	@Test(expected = IllegalArgumentException.class)
+	@Test(expectedExceptions = IllegalArgumentException.class)
 	public void testIPv6Invalid() {
 
 		byte[] ipv6 = new byte[4];
@@ -50,7 +49,7 @@ public class NetUtilTest {
 
 	}
 
-	@Test(expected = IllegalArgumentException.class)
+	@Test(expectedExceptions = IllegalArgumentException.class)
 	public void testIPv6Invalid2() {
 
 		byte[] ipv6 = new byte[11];
@@ -59,7 +58,7 @@ public class NetUtilTest {
 
 	}
 
-	@Test(expected = IllegalArgumentException.class)
+	@Test(expectedExceptions = IllegalArgumentException.class)
 	public void testIPv4Invalid() {
 
 		byte[] ipv4 = new byte[5];
@@ -68,7 +67,7 @@ public class NetUtilTest {
 
 	}
 
-	@Test(expected = IllegalArgumentException.class)
+	@Test(expectedExceptions = IllegalArgumentException.class)
 	public void testIPv4Invalid2() {
 
 		byte[] ipv4 = new byte[3];

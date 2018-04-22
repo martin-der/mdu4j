@@ -1,8 +1,7 @@
 package net.tetrakoopa.mdu4j.util;
 
-import junit.framework.Assert;
-
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.io.InputStream;

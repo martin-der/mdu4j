@@ -15,9 +15,9 @@ import net.tetrakoopa.mdu4j.util.sel.exception.SimpleELException;
 import net.tetrakoopa.mdu4j.util.sel.exception.UnknownAttributException;
 import net.tetrakoopa.mdu4j.util.sel.exception.UnknownObjectException;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 public class SimpleELTest {
 
@@ -29,7 +29,7 @@ public class SimpleELTest {
 
 	
 
-	@Before
+	@BeforeTest
 	public void init() {
 
 
@@ -86,35 +86,35 @@ public class SimpleELTest {
 		Assert.assertEquals(object, "14/07/1789");
 	}
 
-	@Test(expected = ELSyntaxException.class)
+	@Test(expectedExceptions = ELSyntaxException.class)
 	public void testNotEvenAObject() throws SimpleELException {
 
 		SimpleEL.evaluateExpression(truc, "truc", "");
 	}
 
-	@Test(expected = UnknownObjectException.class)
+	@Test(expectedExceptions = UnknownObjectException.class)
 	public void testUnknownObject() throws SimpleELException {
 
 		SimpleEL.evaluateExpression(truc, "truc", "foobar");
 	}
 
-	@Test(expected = UnknownAttributException.class)
+	@Test(expectedExceptions = UnknownAttributException.class)
 	public void testUnknownAttribut() throws SimpleELException {
 
 		SimpleEL.evaluateExpression(truc, "truc", "truc.space");
 	}
 
-	@Test(expected = ELNullPointerException.class)
+	@Test(expectedExceptions = ELNullPointerException.class)
 	public void testObjectNullPointer() throws SimpleELException {
 		SimpleEL.evaluateExpression(null, "truc", "truc.name");
 	}
 
-	@Test(expected = ELNullPointerException.class)
+	@Test(expectedExceptions = ELNullPointerException.class)
 	public void testObjectNullPointerOnUnexistingAttribut() throws SimpleELException {
 		SimpleEL.evaluateExpression(null, "truc", "truc.doesnotexist");
 	}
 
-	@Test(expected = ELNullPointerException.class)
+	@Test(expectedExceptions = ELNullPointerException.class)
 	public void testAttributNullPointer() throws SimpleELException {
 
 		truc.setFirstBiduleEver(null);

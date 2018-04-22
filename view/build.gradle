@@ -6,5 +6,6 @@ dependencies {
 	compile project(':util')
 
 	compile "org.springframework:spring-core:${property('version.spring')}"
+	testCompileOnly "org.eclipse.persistence:org.eclipse.persistence.moxy:2.5.0"
 }
 

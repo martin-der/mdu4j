@@ -14,22 +14,28 @@ subprojects {
 	}
 }
 
+buildscript {
+	repositories {
+		jcenter()
+		mavenCentral()
+		mavenLocal()
+		maven { url 'https://jitpack.io' }
+	}
+
+	dependencies {
+		classpath 'org.akhikhl.gretty:gretty:+'
+		classpath "com.github.martin-der.poignee:util:${property('version.mdu.poignee')}"
+	}
+}
 
 allprojects {
 
-	buildscript {
-		repositories {
-			jcenter()
-		}
-
-		dependencies {
-			classpath 'org.akhikhl.gretty:gretty:+'
-		}
-	}
 
 
 	apply plugin: 'maven'
     apply plugin: 'java'
+	apply plugin: 'net.tetrakoopa.poignee.util'
+
 
     tasks.withType(JavaCompile) {
         sourceCompatibility = "${project.property('sourceCompatibility')}"
@@ -41,8 +47,8 @@ allprojects {
 		jcenter()
 	}
 
-    group = 'com.github.martin-der.mdu4j'
-    version = '1.0.0-SNAPSHOT'
+    group = 'net.tetrakoopa.mdu4j'
+	version getGitVersionName()
 
 	test {
 		testLogging {

@@ -1,11 +1,11 @@
 package net.tetrakoopa.mdu4j.util;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.Assert.assertEquals;
+import static org.testng.Assert.assertEquals;
 
 public class Map2StringPropertiesTest {
 
@@ -49,7 +49,7 @@ public class Map2StringPropertiesTest {
 		int weightInTonne = Map2StringProperties.getInteger("ship.weight", shipProperties, 300);
 		assertEquals(300, weightInTonne);
 	}
-	@Test(expected = Map2StringProperties.BadTypeException.class)
+	@Test(expectedExceptions = Map2StringProperties.BadTypeException.class)
 	public void failToGetInteger() {
 		Map2StringProperties.getInteger("captain.name", shipProperties);
 	}
@@ -64,7 +64,7 @@ public class Map2StringPropertiesTest {
 		long weightInTonne = Map2StringProperties.getLong("ship.weight", shipProperties, 300);
 		assertEquals(300, weightInTonne);
 	}
-	@Test(expected = Map2StringProperties.BadTypeException.class)
+	@Test(expectedExceptions = Map2StringProperties.BadTypeException.class)
 	public void failToGetLong() {
 		Map2StringProperties.getLong("captain.name", shipProperties);
 	}
@@ -79,7 +79,7 @@ public class Map2StringPropertiesTest {
 		boolean drunk = Map2StringProperties.getBoolean("crew.drunk", shipProperties, false);
 		assertEquals(false, drunk);
 	}
-	@Test(expected = Map2StringProperties.BadTypeException.class)
+	@Test(expectedExceptions = Map2StringProperties.BadTypeException.class)
 	public void failToGetBoolean() {
 		Map2StringProperties.getBoolean("captain.name", shipProperties);
 	}
@@ -89,7 +89,7 @@ public class Map2StringPropertiesTest {
 		Activity activity = Map2StringProperties.getEnumeration(Activity.class, "ship.current-activity", shipProperties);
 		assertEquals(Activity.CREW_IS_EATING, activity);
 	}
-	@Test(expected = Map2StringProperties.BadTypeException.class)
+	@Test(expectedExceptions = Map2StringProperties.BadTypeException.class)
 	public void failToGetEnumeration() {
 		Map2StringProperties.getEnumeration(Activity.class, "captain.name", shipProperties);
 	}

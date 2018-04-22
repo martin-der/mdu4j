@@ -1,13 +1,13 @@
 package net.tetrakoopa.mdu4j.front.servlet.bean;
 
-import net.tetrakoopa.mdu4j.view.UIAttribute;
+import net.tetrakoopa.mdu4j.view.UI;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-public interface ActionAttribute extends UIAttribute {
+public interface ActionAttribute extends UI {
 
     @Retention(RetentionPolicy.RUNTIME)
     @Target(ElementType.FIELD)

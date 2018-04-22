@@ -2,9 +2,9 @@ package net.tetrakoopa.mdu4j.view;
 
 import net.tetrakoopa.mdu4j.test.TestResourcesFetcher;
 
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.Ignore;
+import org.testng.annotations.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;

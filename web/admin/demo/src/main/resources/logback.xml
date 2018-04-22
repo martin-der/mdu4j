@@ -1,16 +1,26 @@
 <configuration>
 
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-		<!-- encoders are assigned the type
-			 ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
 		<encoder>
 			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="TEMPORARY" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>/tmp/admin-demo/log/admin.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/tmp/admin-demo/log/admin.%d{yyyy-MM-dd-HH-mm}.log</fileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+
+		<encoder>
+			<pattern>%relative [%thread] %-5level %logger{35} - %msg%n</pattern>
 		</encoder>
 	</appender>
 
 	<logger name="net.tetrakoopa" level="debug" />
 
 	<root level="warn">
-		<appender-ref ref="STDOUT" />
+		<appender-ref ref="TEMPORARY" />
 	</root>
 </configuration>

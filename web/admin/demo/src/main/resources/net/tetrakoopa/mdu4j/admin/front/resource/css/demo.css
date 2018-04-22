@@ -3,6 +3,7 @@ ul {
 	-webkit-margin-after: 0em;
 }
 
+
 a {
     color: black;
 }
@@ -214,5 +215,9 @@ i.big-title {
 li.action.verb>a>span>i {
     color: #2DAEBF;
     text-shadow: 0px 1px 0px #0092b3,0px 2px 0px #0087a6,0px 3px 0px #008099,0px 4px 0px #00758c,0px 5px 0px #555,0px 6px 0px #006a80,0px 0px 0px #006073,0px 8px 7px #005566;
+}
+
+tr.rolled-log {
+	text-decoration: line-through;
 }
 

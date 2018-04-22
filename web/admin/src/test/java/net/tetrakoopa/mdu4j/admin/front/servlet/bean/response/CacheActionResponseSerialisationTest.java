@@ -6,15 +6,16 @@ import net.tetrakoopa.mdu4j.admin.front.servlet.bean.response.CacheResponse;
 import net.tetrakoopa.mdu4j.front.servlet.bean.response.ActionResponse;
 import net.tetrakoopa.mdu4j.util.test.AbstractSerialisationHelperTest;
 
-import org.junit.Test;
 import org.springframework.util.ReflectionUtils;
+import org.testng.annotations.Test;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import static org.junit.Assert.*;
+import static org.testng.Assert.assertEquals;
+
 
 public class CacheActionResponseSerialisationTest extends AbstractSerialisationHelperTest {
 

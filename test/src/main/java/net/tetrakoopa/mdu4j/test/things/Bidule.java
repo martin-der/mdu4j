@@ -28,7 +28,6 @@ public class Bidule {
 		return "{ id:" + id + ", name:" + name + " }";
 	}
 
-
 	public float getRatio() {
 		return ratio;
 	}

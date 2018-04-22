@@ -3,7 +3,7 @@ package net.tetrakoopa.mdu4j.front.servlet.view;
 import net.tetrakoopa.mdu4j.front.servlet.bean.ActionAttribute;
 import net.tetrakoopa.mdu4j.front.servlet.bean.HtmlParameterEnum;
 import net.tetrakoopa.mdu4j.util.EnumUtil;
-import net.tetrakoopa.mdu4j.view.UIAttribute;
+import net.tetrakoopa.mdu4j.view.UI;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -50,7 +50,7 @@ public class HTMLActionRenderHelper extends HTMLRenderHelper {
 
                 @Override
                 public void render(PrintWriter writer, Field field) throws IOException {
-                    final UIAttribute.Glyph glyphAnnotation = field.getAnnotation(UIAttribute.Glyph.class);
+                    final UI.Glyph glyphAnnotation = field.getAnnotation(UI.Glyph.class);
                     if (glyphAnnotation == null) return;
                     HTMLRenderHelper.Glyph.renderGlyph(writer, glyphAnnotation.value());
                 }

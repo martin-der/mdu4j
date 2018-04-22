@@ -1,16 +1,12 @@
 package net.tetrakoopa.mdu4j.test.service.dataquery;
 
-import java.io.IOException;
-import java.util.List;
+import com.google.gson.Gson;
 
 import net.tetrakoopa.mdu4j.service.dataquery.RIQueryService;
-import net.tetrakoopa.mdu4j.service.dataquery.model.Operator;
-import net.tetrakoopa.mdu4j.service.dataquery.model.DataEngine;
-import net.tetrakoopa.mdu4j.util.IOUtil;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
-import com.google.gson.Gson;
+import java.io.IOException;
 
 public class RIQueryServiceTest {
 

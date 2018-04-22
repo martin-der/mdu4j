@@ -2,11 +2,11 @@ package net.tetrakoopa.mdu4j.util;
 
 import net.tetrakoopa.mdu4j.test.TestResourcesFetcher;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-import static org.junit.Assert.assertEquals;
+import static org.testng.Assert.assertEquals;
 
 public class StringUtilTest {
 

@@ -14,6 +14,8 @@ public class Truc {
 
 	private Bidule firstBiduleEver;
 
+	private Foobar foobar;
+
 	public Long getId() {
 		return id;
 	}
@@ -58,4 +60,11 @@ public class Truc {
 		this.birthDate = birthDate;
 	}
 
+	public Foobar getFoobar() {
+		return foobar;
+	}
+
+	public void setFoobar(Foobar foobar) {
+		this.foobar = foobar;
+	}
 }

@@ -1,9 +1,9 @@
-package net.tetrakoopa.mdu4j.service.crud;
+package net.tetrakoopa.mdu4j.domain.crud;
 
 import java.io.Serializable;
 import java.util.List;
 
-import net.tetrakoopa.mdu4j.service.crud.exception.CrudException;
+import net.tetrakoopa.mdu4j.domain.crud.exception.CrudException;
 
 public interface Crud<ID extends Serializable, MDL> {
 	
