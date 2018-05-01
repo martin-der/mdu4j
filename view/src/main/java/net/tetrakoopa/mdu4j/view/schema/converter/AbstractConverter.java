@@ -263,10 +263,21 @@ public abstract class AbstractConverter<S, P, O, R> {
 		}
 
 
-		final Map<String, FieldSortingInformer.OrderedField> orderedField = getSortedField(fields).stream()
-				.collect(Collectors.toMap(sf -> getFieldName(sf), sf -> new FieldSortingInformer.OrderedField(sf, getFieldOrder(sf))));
+		final Map<String, FieldSortingInformer.OrderedField> orderedField;
+		int fieldIndex = 0;
+		final List<Field> sortedFields = getSortedField(fields);
+		if (sortedFields!=null) {
+			final Map<String, FieldSortingInformer.OrderedField> tmpSortedFields = new HashMap<>();
+			for (Field sortedField : sortedFields) {
+				tmpSortedFields.put(getFieldName(sortedField), new FieldSortingInformer.OrderedField(sortedField, fieldIndex));
+				fieldIndex++;
+			}
+			orderedField = Collections.unmodifiableMap(tmpSortedFields);
+		} else {
+			orderedField = NO_ORDERED_FIELD;
+		}
 		if (fieldSortingInformer != null) {
-			fieldSortingInformer.withSortedFields(Collections.unmodifiableMap(orderedField));
+			fieldSortingInformer.withSortedFields(orderedField);
 		}
 
 		for (Field field : fields) {
