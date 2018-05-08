@@ -29,7 +29,7 @@ public interface UI {
 
 	}
 	@Retention(RetentionPolicy.RUNTIME)
-	@Target({ElementType.FIELD, ElementType.TYPE})
+	@Target({ElementType.FIELD, ElementType.TYPE, ElementType.PARAMETER})
 	@interface Label {
 		String value();
 	}
